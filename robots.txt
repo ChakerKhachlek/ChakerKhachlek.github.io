@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://chakerkhachlek.github.io/CKPortfolio/sitemap.xml
+Sitemap: https://chakerkhachlek.github.io/sitemap.xml

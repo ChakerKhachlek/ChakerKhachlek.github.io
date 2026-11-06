@@ -1,0 +1,137 @@
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #f9fafc;
+  font-family: "Fira Code", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+}
+
+.subheading {
+  color: #6c757d;
+  font-size: 1.1rem;
+  margin-top: -1rem;
+  margin-bottom: 2rem;
+}
+
+.accordion-button {
+  font-weight: 600;
+  transition: all 0.2s ease-in-out;
+}
+
+.accordion-button:focus {
+  box-shadow: none;
+}
+
+.accordion-item {
+  border: none;
+  border-radius: 0.5rem;
+  overflow: hidden;
+  margin-bottom: 1rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+}
+
+.accordion-body {
+  background: #ffffff;
+  border-top: 1px solid #eee;
+}
+
+pre {
+  background-color: #2d2d2d;
+  color: #ffffff;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  font-size: 0.95rem;
+  overflow-x: auto;
+  margin-bottom: 0;
+}
+
+code {
+  white-space: pre-wrap;
+}
+
+.lesson-note {
+  font-size: 0.95rem;
+  color: black;
+  margin-bottom: 0.75rem;
+}
+
+.section-title {
+  font-weight: 600;
+  color: black;
+  margin-bottom: 1.25rem;
+  margin-top: 3rem;
+  border-left: 4px solid black;
+  padding-left: 1rem;
+}
+
+#course-summary {
+  max-width: 600px;
+  margin: 0 auto 3rem auto;
+  padding: 0;
+}
+
+.list-group-item {
+  cursor: pointer;
+  border: none;
+  padding: 0.75rem 1rem;
+  font-weight: 600;
+  color: #000;
+  background-color: transparent;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  border-radius: 0.5rem;
+  margin-bottom: 0.25rem;
+  text-align: left;
+}
+
+.list-group-item:hover,
+.list-group-item:focus {
+  background-color: #000;
+  color: #fff;
+  outline: none;
+  text-decoration: none;
+}
+
+.list-group-item.active {
+  background-color: #000;
+  color: #fff;
+  font-weight: 700;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.7);
+  text-decoration: none;
+}
+
+.list-group-item .nested-list {
+  padding-left: 1.25rem;
+  margin-top: 0.25rem;
+  list-style-type: none;
+}
+
+.nested-list li {
+  padding: 0.25rem 0;
+  font-weight: 400;
+  font-size: 0.95rem;
+}
+
+.nested-list li a {
+  color: #000;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.nested-list li a:hover,
+.nested-list li a:focus {
+  text-decoration: underline;
+  color: black;
+}
+
+@media (min-width: 992px) {
+  #course-summary {
+    position: sticky;
+    top: 1rem;
+  }
+}

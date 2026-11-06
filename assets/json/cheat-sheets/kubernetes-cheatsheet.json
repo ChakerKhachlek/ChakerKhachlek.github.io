@@ -1,0 +1,210 @@
+{
+  "title": "Kubernetes Complete Cheat Sheet",
+  "modules": [
+    {
+      "title": "1. Cluster Basics",
+      "lessons": [
+        {
+          "title": "Check Cluster Info",
+          "note": "Get cluster info, context, and config.",
+          "code": "kubectl cluster-info\nkubectl config view\nkubectl config current-context"
+        },
+        {
+          "title": "View Nodes",
+          "note": "List all nodes with status, labels, and capacity.",
+          "code": "kubectl get nodes\nkubectl describe node <node-name>\nkubectl get nodes -o wide"
+        },
+        {
+          "title": "Check Cluster Resources",
+          "note": "View resource usage and limits on nodes.",
+          "code": "kubectl top nodes"
+        }
+      ]
+    },
+    {
+      "title": "2. Pods",
+      "lessons": [
+        {
+          "title": "List Pods",
+          "note": "View all pods in the current or specified namespace.",
+          "code": "kubectl get pods\nkubectl get pods -n <namespace>\nkubectl get pods -o wide"
+        },
+        {
+          "title": "Describe Pod",
+          "note": "Detailed info about a pod, events, and container statuses.",
+          "code": "kubectl describe pod <pod-name>\nkubectl describe pod <pod-name> -n <namespace>"
+        },
+        {
+          "title": "Create Pod",
+          "note": "Run a pod using YAML or directly with CLI.",
+          "code": "kubectl apply -f pod.yaml\nkubectl run mypod --image=nginx --restart=Never"
+        },
+        {
+          "title": "Delete Pod",
+          "note": "Remove a pod or multiple pods.",
+          "code": "kubectl delete pod <pod-name>\nkubectl delete pod <pod-name> -n <namespace>\nkubectl delete pods --all"
+        },
+        {
+          "title": "Pod Logs",
+          "note": "View logs of a pod container (single/multi-container).",
+          "code": "kubectl logs <pod-name>\nkubectl logs -f <pod-name> -c <container-name>\nkubectl logs --tail=100 <pod-name>"
+        },
+        {
+          "title": "Exec into Pod",
+          "note": "Run commands inside a pod.",
+          "code": "kubectl exec -it <pod-name> -- /bin/bash\nkubectl exec -it <pod-name> -n <namespace> -- sh"
+        },
+        {
+          "title": "Port Forward",
+          "note": "Access pod locally by forwarding ports.",
+          "code": "kubectl port-forward <pod-name> 8080:80\nkubectl port-forward svc/<service-name> 8080:80"
+        }
+      ]
+    },
+    {
+      "title": "3. Deployments",
+      "lessons": [
+        {
+          "title": "Create Deployment",
+          "note": "Deploy applications declaratively using YAML.",
+          "code": "kubectl apply -f deployment.yaml\nkubectl create deployment nginx-deploy --image=nginx"
+        },
+        {
+          "title": "Scale Deployment",
+          "note": "Change number of replicas.",
+          "code": "kubectl scale deployment <name> --replicas=3\nkubectl scale deployment nginx-deploy --replicas=5 -n <namespace>"
+        },
+        {
+          "title": "Update Deployment",
+          "note": "Update container images or configuration.",
+          "code": "kubectl set image deployment/<name> <container>=<image>:<tag>\nkubectl rollout restart deployment/<name>"
+        },
+        {
+          "title": "Rollback Deployment",
+          "note": "Revert to previous deployment revision.",
+          "code": "kubectl rollout undo deployment/<name>\nkubectl rollout status deployment/<name>"
+        },
+        {
+          "title": "Check Deployment Status",
+          "note": "Check rollout and current status.",
+          "code": "kubectl get deployments\nkubectl describe deployment <name>"
+        }
+      ]
+    },
+    {
+      "title": "4. Services & Networking",
+      "lessons": [
+        {
+          "title": "List Services",
+          "note": "List all services in a namespace.",
+          "code": "kubectl get svc\nkubectl get svc -n <namespace>\nkubectl get svc -o wide"
+        },
+        {
+          "title": "Describe Service",
+          "note": "Detailed info about a service, endpoints, and ports.",
+          "code": "kubectl describe svc <service-name>\nkubectl describe svc <service-name> -n <namespace>"
+        },
+        {
+          "title": "Expose Deployment",
+          "note": "Create a service for a deployment or pod.",
+          "code": "kubectl expose deployment <name> --type=ClusterIP --port=80\nkubectl expose pod <pod-name> --type=NodePort --port=8080"
+        },
+        {
+          "title": "Ingress",
+          "note": "Access services externally using ingress.",
+          "code": "kubectl apply -f ingress.yaml\nkubectl get ingress\nkubectl describe ingress <name>"
+        }
+      ]
+    },
+    {
+      "title": "5. ConfigMaps & Secrets",
+      "lessons": [
+        {
+          "title": "ConfigMaps",
+          "note": "Store non-sensitive configuration data.",
+          "code": "kubectl create configmap <name> --from-literal=key=value\nkubectl get configmap\nkubectl describe configmap <name>\nkubectl apply -f configmap.yaml"
+        },
+        {
+          "title": "Secrets",
+          "note": "Store sensitive data securely.",
+          "code": "kubectl create secret generic <name> --from-literal=password=1234\nkubectl get secret\nkubectl describe secret <name>\nkubectl apply -f secret.yaml"
+        },
+        {
+          "title": "Use Config & Secrets in Pods",
+          "note": "Mount or inject into environment variables.",
+          "code": "envFrom:\n  - configMapRef:\n      name: my-config\n  - secretRef:\n      name: my-secret"
+        }
+      ]
+    },
+    {
+      "title": "6. Namespaces & Context",
+      "lessons": [
+        {
+          "title": "List Namespaces",
+          "note": "Show all namespaces in the cluster.",
+          "code": "kubectl get namespaces"
+        },
+        {
+          "title": "Switch Namespace",
+          "note": "Change current context namespace.",
+          "code": "kubectl config set-context --current --namespace=<namespace>"
+        },
+        {
+          "title": "Create & Delete Namespace",
+          "note": "Manage namespaces.",
+          "code": "kubectl create namespace <name>\nkubectl delete namespace <name>"
+        }
+      ]
+    },
+    {
+      "title": "7. Labels, Annotations & Selectors",
+      "lessons": [
+        {
+          "title": "Add Labels",
+          "note": "Attach labels to resources.",
+          "code": "kubectl label pod <pod-name> env=prod\nkubectl label deployment <name> version=v1"
+        },
+        {
+          "title": "View Labels",
+          "note": "Filter resources by label.",
+          "code": "kubectl get pods --show-labels\nkubectl get pods -l env=prod"
+        },
+        {
+          "title": "Add Annotations",
+          "note": "Attach metadata to resources.",
+          "code": "kubectl annotate pod <pod-name> description='My app pod'"
+        }
+      ]
+    },
+    {
+      "title": "8. Miscellaneous Commands",
+      "lessons": [
+        {
+          "title": "Apply YAML",
+          "note": "Create or update resources from YAML files.",
+          "code": "kubectl apply -f <file>.yaml\nkubectl apply -k <directory>"
+        },
+        {
+          "title": "Delete Resource",
+          "note": "Delete pods, deployments, or any resource.",
+          "code": "kubectl delete -f <file>.yaml\nkubectl delete pod <name>\nkubectl delete deployment <name>"
+        },
+        {
+          "title": "View Events",
+          "note": "Check recent events for troubleshooting.",
+          "code": "kubectl get events\nkubectl describe pod <pod-name> | grep Events -A 10"
+        },
+        {
+          "title": "Top Pods & Nodes",
+          "note": "View CPU and memory usage.",
+          "code": "kubectl top pod\nkubectl top pod -n <namespace>\nkubectl top node"
+        },
+        {
+          "title": "Edit Resource",
+          "note": "Edit live resource YAML.",
+          "code": "kubectl edit deployment <name>\nkubectl edit pod <pod-name>"
+        }
+      ]
+    }
+  ]
+}

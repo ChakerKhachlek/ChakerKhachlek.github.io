@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-8K4Z6ZJ7WC"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-8K4Z6ZJ7WC');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chaker Khachlek — Resume</title>
+    <meta name="description" content="Plain-text resume of Chaker Khachlek, backend software engineer and web developer in Paris.">
+    <link rel="canonical" href="https://chakerkhachlek.github.io/cv-ats.html">
+    <link rel="icon" href="assets/img/icons/favicon.ico" sizes="any">
+    <link rel="icon" href="assets/img/icons/favicon-48.png" type="image/png" sizes="48x48">
+    <link rel="icon" href="assets/img/icons/favicon-192.png" type="image/png" sizes="192x192">
+    <link rel="apple-touch-icon" href="assets/img/icons/apple-touch-icon.png">
+    <style>
+        /* Plain single-column layout for applicant tracking systems: one reading order,
+           standard headings, no icons, TrueType system fonts. */
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        html[lang="en"] .fr, html[lang="fr"] .en { display: none !important; }
+
+        body {
+            background: #e5e7eb;
+            color: #111;
+            font: 10.5pt/1.4 Arial, Helvetica, "Liberation Sans", sans-serif;
+        }
+        a { color: inherit; }
+
+        .toolbar {
+            display: flex; gap: 8px; justify-content: center; flex-wrap: wrap;
+            padding: 10px 16px; background: #121212;
+        }
+        .toolbar button, .toolbar a {
+            background: transparent; color: #e5e7eb; cursor: pointer; text-decoration: none;
+            border: 1px solid #3a3f47; border-radius: 6px; padding: 6px 12px; font: 13px Arial, sans-serif;
+        }
+        .toolbar button[aria-pressed="true"] { background: #16a34a; border-color: #16a34a; color: #fff; }
+
+        .sheet {
+            width: 210mm; min-height: 297mm; margin: 24px auto;
+            padding: 14mm 16mm; background: #fff;
+        }
+
+        h1 { font-size: 20pt; line-height: 1.2; }
+        .headline { font-size: 11.5pt; font-weight: bold; margin-top: 1mm; }
+        .contact { margin-top: 2mm; }
+
+        h2 {
+            font-size: 11.5pt; text-transform: uppercase;
+            border-bottom: 1px solid #111;
+            margin: 5mm 0 2mm; padding-bottom: .8mm;
+        }
+        /* Keep each heading on the same page as its first entry. */
+        section { break-inside: auto; }
+        h2, h2 + .entry { break-inside: avoid; }
+        h2 { break-after: avoid; }
+
+        .entry { margin-bottom: 3mm; break-inside: avoid; }
+        .entry h3 { font-size: 10.5pt; }
+        .entry p { margin-top: .3mm; }
+        .entry ul { margin: 1mm 0 0 5mm; }
+        .entry li { margin-bottom: .5mm; }
+
+        .skills p { margin-bottom: .8mm; }
+
+        @media screen and (max-width: 860px) {
+            .sheet { width: auto; min-height: 0; margin: 0; padding: 20px 16px; }
+        }
+
+        @page { size: A4; margin: 12mm 0; }
+        @page :first { margin-top: 0; }
+        @media print {
+            body { background: #fff; }
+            .toolbar { display: none; }
+            .sheet { margin: 0; padding-top: 0; padding-bottom: 0; }
+            .sheet > :first-child { padding-top: 14mm; }
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="toolbar" aria-label="Resume options">
+        <a href="cv.html"><span class="en">← designed CV</span><span class="fr">← CV design</span></a>
+        <button type="button" data-set-lang="en">EN</button>
+        <button type="button" data-set-lang="fr">FR</button>
+        <!-- Pre-rendered PDFs: window.print() is ignored by many mobile and in-app browsers -->
+        <a class="en" href="assets/pdf/chaker_khachlek_cv_ats_en.pdf" download>Download PDF</a>
+        <a class="fr" href="assets/pdf/chaker_khachlek_cv_ats_fr.pdf" download>Télécharger le PDF</a>
+    </nav>
+
+    <main class="sheet">
+        <header>
+            <h1>Chaker Khachlek</h1>
+            <p class="headline">
+                <span class="en">Backend Software Engineer | Web Developer</span>
+                <span class="fr">Ingénieur Logiciel Backend | Développeur Concepteur Web</span>
+            </p>
+            <p class="contact">
+                Paris, France | +33 7 65 70 28 52 | chaker.khachlek@gmail.com<br>
+                LinkedIn: linkedin.com/in/chaker-khachlek | GitHub: github.com/ChakerKhachlek<br>
+                Portfolio: chakerkhachlek.github.io
+            </p>
+        </header>
+
+        <section>
+            <h2><span class="en">Summary</span><span class="fr">Profil</span></h2>
+            <p class="en">Backend software engineer and web developer at SQLI in Paris, working with PHP, Symfony, Ibexa and Shopware, and bringing AI-assisted workflows (AI agents, MCP) into delivery. Founder of Open Prompt Registry and solo creator of Loasis, a real-time multiplayer browser game with self-hosted voice chat. Built an accreditation platform that handled 3,500+ participants from 54 countries.</p>
+            <p class="fr">Ingénieur logiciel backend et développeur web chez SQLI à Paris, sur PHP, Symfony, Ibexa et Shopware, avec intégration de flux de travail assistés par IA (agents IA, MCP). Fondateur d'Open Prompt Registry et créateur solo de Loasis, un jeu multijoueur temps réel dans le navigateur avec chat vocal auto-hébergé. Développement d'une plateforme d'accréditation ayant géré plus de 3 500 participants de 54 pays.</p>
+        </section>
+
+        <section>
+            <h2><span class="en">Professional Experience</span><span class="fr">Expériences professionnelles</span></h2>
+
+            <div class="entry">
+                <h3><span class="en">Web Developer (Permanent)</span><span class="fr">Développeur Concepteur Web (CDI)</span> | SQLI</h3>
+                <p><span class="en">Oct 2024 – Present</span><span class="fr">Oct. 2024 – Présent</span> | Paris, France</p>
+                <ul>
+                    <li class="en">Lead ongoing maintenance and optimisation for a major insurance client's web platform.</li>
+                    <li class="fr">Pilotage de la maintenance et de l'optimisation continue d'un projet d'assurance grand compte.</li>
+                    <li class="en">Integrate AI-assisted workflows (AI agents, MCP skills) to shorten delivery times and automate code checks.</li>
+                    <li class="fr">Intégration de flux de travail assistés par IA (agents IA, skills MCP) pour réduire les délais de livraison et automatiser les vérifications de code.</li>
+                </ul>
+            </div>
+
+            <div class="entry">
+                <h3><span class="en">Web Developer (Internship)</span><span class="fr">Développeur Concepteur Web (Stage)</span> | SQLI</h3>
+                <p><span class="en">Feb 2024 – Aug 2024</span><span class="fr">Fév. 2024 – Août 2024</span> | Paris, France</p>
+                <ul>
+                    <li class="en">Improved an open-source SQLI bundle for Ibexa and Symfony, with strict code-quality standards and automated tests.</li>
+                    <li class="fr">Amélioration d'un bundle SQLI open source pour Ibexa et Symfony, avec des standards stricts de qualité de code et des tests automatisés.</li>
+                    <li class="en">Built custom Shopware plugins meeting the complex requirements of an e-commerce client.</li>
+                    <li class="fr">Conception de plugins Shopware sur-mesure répondant aux exigences complexes d'un client e-commerce.</li>
+                </ul>
+            </div>
+
+            <div class="entry">
+                <h3><span class="en">MERN Web Developer | Tunisian National Olympic Committee</span><span class="fr">Développeur Web MERN | Comité National Olympique Tunisien</span></h3>
+                <p><span class="en">Apr 2023 – Jul 2023</span><span class="fr">Avr. 2023 – Juil. 2023</span> | Tunis, <span class="en">Tunisia</span><span class="fr">Tunisie</span></p>
+                <ul>
+                    <li class="en">Delivered the accreditation platform for the African Beach Games, registering 3,500+ participants from 54 countries (React, Node.js, Express, MongoDB, WebSockets).</li>
+                    <li class="fr">Mise en œuvre de la plateforme d'accréditation des Jeux Africains de Plage : plus de 3 500 participants de 54 pays (React, Node.js, Express, MongoDB, WebSockets).</li>
+                </ul>
+            </div>
+
+            <div class="entry">
+                <h3><span class="en">Laravel Web Developer</span><span class="fr">Développeur Web Laravel</span> | Carolina Tunisian Group</h3>
+                <p><span class="en">Jul 2022 – Sep 2022</span><span class="fr">Juil. 2022 – Sep. 2022</span> | Tunis, <span class="en">Tunisia</span><span class="fr">Tunisie</span></p>
+                <ul>
+                    <li class="en">Designed and built a high-traffic e-commerce platform end to end with Laravel, optimising the purchase journey.</li>
+                    <li class="fr">Conception et développement complet d'une plateforme e-commerce à fort trafic sous Laravel, optimisant les parcours d'achat.</li>
+                </ul>
+            </div>
+
+            <div class="entry">
+                <h3><span class="en">Laravel Web Developer</span><span class="fr">Développeur Web Laravel</span> | Greenex</h3>
+                <p><span class="en">Jan 2021 – Jun 2021</span><span class="fr">Jan. 2021 – Juin 2021</span> | Tunis, <span class="en">Tunisia</span><span class="fr">Tunisie</span></p>
+                <ul>
+                    <li class="en">Built an ERP automating production-data entry, making the company's management tool faster and more flexible.</li>
+                    <li class="fr">Mise en place d'un ERP automatisant la saisie des facteurs de production, rendant l'outil de gestion plus flexible et réactif.</li>
+                </ul>
+            </div>
+
+            <div class="entry">
+                <h3><span class="en">PHP Web Developer</span><span class="fr">Développeur Web PHP</span> | Tunisair</h3>
+                <p><span class="en">Jan 2020 – Feb 2020</span><span class="fr">Jan. 2020 – Fév. 2020</span> | Tunis, <span class="en">Tunisia</span><span class="fr">Tunisie</span></p>
+                <ul>
+                    <li class="en">Built a statistics tool extracting and analysing data from complex B2B booking XML feeds.</li>
+                    <li class="fr">Création d'un outil statistique d'extraction et d'analyse de données issues de flux XML complexes de réservations B2B.</li>
+                </ul>
+            </div>
+        </section>
+
+        <section>
+            <h2><span class="en">Projects</span><span class="fr">Projets</span></h2>
+
+            <div class="entry">
+                <h3>Loasis (Oasis Plaza) | <span class="en">Solo Developer and Creator</span><span class="fr">Développeur et créateur solo</span></h3>
+                <p>2026 | playloasis.com | <span class="en">Featured on TGTV</span><span class="fr">Présenté sur TGTV</span></p>
+                <ul>
+                    <li class="en">Real-time 2D multiplayer virtual café playable in the browser on PC, tablet and mobile, with Chkobba, Checkers, Chess and Ludo, friends, online presence and AI bots.</li>
+                    <li class="fr">Café virtuel 2D multijoueur temps réel jouable dans le navigateur (PC, tablette, mobile), avec Chkobba, Dame, Échecs et Ludo, amis, présence en ligne et bots IA.</li>
+                    <li class="en">Custom game engine built with AI agents, including in-game map and decoration editors.</li>
+                    <li class="fr">Moteur de jeu sur-mesure construit avec des agents IA, incluant des éditeurs de carte et de décoration en jeu.</li>
+                    <li class="en">Self-hosted LiveKit (WebRTC voice chat) and a custom WebSocket server, deployed on a dedicated, secured VPC.</li>
+                    <li class="fr">LiveKit auto-hébergé (chat vocal WebRTC) et serveur WebSocket sur-mesure, déployés sur un VPC dédié et sécurisé.</li>
+                </ul>
+            </div>
+
+            <div class="entry">
+                <h3>Open Prompt Registry | <span class="en">Founder and Developer</span><span class="fr">Fondateur et développeur</span></h3>
+                <p><span class="en">May 2025 – Present</span><span class="fr">Mai 2025 – Présent</span> | opregistry.com</p>
+                <ul>
+                    <li class="en">Designed, built and deployed a platform to organise, version and share AI prompts, with a collaborative space for prompt engineers (Next.js, TypeScript, Prisma, NextAuth.js).</li>
+                    <li class="fr">Conception, développement et déploiement d'une plateforme pour organiser, versionner et partager des prompts IA, avec un espace collaboratif pour prompt engineers (Next.js, TypeScript, Prisma, NextAuth.js).</li>
+                </ul>
+            </div>
+
+            <div class="entry">
+                <h3>EcoWarriors | <span class="en">Academic Project, ESPRIT</span><span class="fr">Projet académique, ESPRIT</span></h3>
+                <p><span class="en">Jan 2023 – Jun 2023</span><span class="fr">Jan. 2023 – Juin 2023</span></p>
+                <ul>
+                    <li class="en">Gamified platform combining social network and education to promote sustainable development. Awarded "Best Project" (React, Express, MongoDB, Leaflet, WebSockets).</li>
+                    <li class="fr">Plateforme gamifiée combinant réseau social et éducation pour promouvoir le développement durable. Primé « Meilleur Projet » (React, Express, MongoDB, Leaflet, WebSockets).</li>
+                </ul>
+            </div>
+        </section>
+
+        <section>
+            <h2><span class="en">Education</span><span class="fr">Formation</span></h2>
+
+            <div class="entry">
+                <h3><span class="en">Engineering Degree in Computer Science, Web Technologies</span><span class="fr">Diplôme National d'Ingénieur en Informatique, Technologies Web</span> | ESPRIT</h3>
+                <p><span class="en">Sep 2021 – Aug 2024</span><span class="fr">Sep. 2021 – Août 2024</span> | Ariana, <span class="en">Tunisia</span><span class="fr">Tunisie</span></p>
+            </div>
+            <div class="entry">
+                <h3><span class="en">International Exchange, Data Intelligence</span><span class="fr">Mobilité internationale, Data Intelligence</span> | ESEO</h3>
+                <p><span class="en">Sep 2023 – Jan 2024</span><span class="fr">Sep. 2023 – Jan. 2024</span> | Vélizy, France</p>
+            </div>
+            <div class="entry">
+                <h3><span class="en">Applied Bachelor's Degree in Computer Science, Information Systems Development</span><span class="fr">Licence Appliquée en Informatique, Développement de Systèmes d'Information</span> | ISET Radès</h3>
+                <p><span class="en">Sep 2019 – Jul 2021</span><span class="fr">Sep. 2019 – Juil. 2021</span> | Radès, <span class="en">Tunisia</span><span class="fr">Tunisie</span></p>
+            </div>
+        </section>
+
+        <section class="skills">
+            <h2><span class="en">Skills</span><span class="fr">Compétences</span></h2>
+            <p><b>Backend:</b> PHP, Symfony, Laravel, Ibexa, Node.js, Express</p>
+            <p><b>Frontend:</b> React, Next.js, Angular, JavaScript, TypeScript</p>
+            <p><b><span class="en">Databases and CMS:</span><span class="fr">Bases de données et CMS :</span></b> MySQL, PostgreSQL, MongoDB, Prisma, Shopware, Ibexa DXP</p>
+            <p><b><span class="en">DevOps and Tools:</span><span class="fr">DevOps et outils :</span></b> Docker, Git, GitHub, GitLab, CI/CD, VPC</p>
+            <p><b><span class="en">Real-time:</span><span class="fr">Temps réel :</span></b> WebSockets, LiveKit, WebRTC</p>
+            <p><b><span class="en">AI:</span><span class="fr">IA :</span></b> <span class="en">AI agents, MCP, Generative AI, OpenAI GPT API</span><span class="fr">Agents IA, MCP, IA générative, API OpenAI GPT</span></p>
+            <p><b><span class="en">Methods:</span><span class="fr">Méthodes :</span></b> <span class="en">Scrum, teamwork, problem solving</span><span class="fr">Scrum, travail d'équipe, résolution de problèmes</span></p>
+        </section>
+
+        <section>
+            <h2>Certifications</h2>
+            <ul style="margin-left: 5mm;">
+                <li>Oracle Cloud Infrastructure Generative AI Professional, Oracle, <span class="en">Oct 2025</span><span class="fr">Oct. 2025</span></li>
+                <li>Ibexa DXP 4.6 Advanced Developer Training, Ibexa, <span class="en">Dec 2024</span><span class="fr">Déc. 2024</span></li>
+                <li>Ibexa DXP 4.6 Developer Training, Ibexa, <span class="en">Mar 2024</span><span class="fr">Mars 2024</span></li>
+                <li>DevOps Pre-Requisite Course and Docker Training Course, KodeKloud, <span class="en">Oct 2023</span><span class="fr">Oct. 2023</span></li>
+                <li>CCNA: Introduction to Networks, Cisco, <span class="en">May 2022</span><span class="fr">Mai 2022</span></li>
+            </ul>
+        </section>
+
+        <section>
+            <h2><span class="en">Languages</span><span class="fr">Langues</span></h2>
+            <p class="en">French: fluent (professional) | English: fluent (professional)</p>
+            <p class="fr">Français : courant (professionnel) | Anglais : courant (professionnel)</p>
+        </section>
+    </main>
+
+    <script>
+        (function () {
+            var params = new URLSearchParams(location.search);
+            var stored = null;
+            try { stored = localStorage.getItem('cv-lang'); } catch (e) { }
+            var lang = params.get('lang') || stored || ((navigator.language || '').slice(0, 2) === 'fr' ? 'fr' : 'en');
+            var buttons = document.querySelectorAll('[data-set-lang]');
+            function setLang(next) {
+                document.documentElement.lang = next;
+                document.title = next === 'fr' ? 'Chaker Khachlek — CV' : 'Chaker Khachlek — Resume';
+                buttons.forEach(function (b) { b.setAttribute('aria-pressed', b.dataset.setLang === next); });
+                try { localStorage.setItem('cv-lang', next); } catch (e) { }
+            }
+            buttons.forEach(function (b) { b.addEventListener('click', function () { setLang(b.dataset.setLang); }); });
+            setLang(lang === 'fr' ? 'fr' : 'en');
+        })();
+    </script>
+</body>
+
+</html>
