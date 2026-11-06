@@ -7,13 +7,16 @@ assets/json/technologies.json:
 
   - a plain-HTML copy of both lists inside <noscript> in index.html,
   - the schema.org structured data (JSON-LD) in index.html,
-  - llms.txt, a plain-text summary of the site for AI tools.
+  - llms.txt, a plain-text summary of the site for AI tools,
+  - sitemap.xml, listing every public page of the site.
 
-Run it after editing either JSON file:  python3 scripts/build_seo.py
+Run it after any change to the site:  python3 scripts/build_seo.py
+Check that the generated files are up to date (used in CI):  python3 scripts/build_seo.py --check
 """
 import html
 import json
 import re
+import sys
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
@@ -155,6 +158,32 @@ def llms_txt(projects, techs):
     return "\n".join(lines) + "\n"
 
 
+def sitemap():
+    """Every public HTML page; 404 pages and files under scripts/ are left out."""
+    pages = sorted(
+        p.relative_to(ROOT).as_posix() for p in ROOT.rglob("*.html")
+        if p.name != "404.html" and not p.relative_to(ROOT).parts[0].startswith((".", "scripts"))
+    )
+    urls = [SITE + ("" if p == "index.html" else p) for p in pages]
+    rows = "".join(f"  <url><loc>{html.escape(u)}</loc></url>\n" for u in urls)
+    return ('<?xml version="1.0" encoding="UTF-8"?>\n'
+            '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n' + rows + "</urlset>\n")
+
+
+def missing_tags():
+    """Every public page needs a title, a meta description and a canonical address."""
+    problems = []
+    for loc in re.findall(r"<loc>(.*?)</loc>", sitemap()):
+        rel = loc[len(SITE):] or "index.html"
+        text = (ROOT / rel).read_text(encoding="utf-8")
+        for label, pattern in [("<title>", r"<title>[^<]+</title>"),
+                               ("meta description", r'<meta name="description" content="[^"]+"'),
+                               ("canonical link", r'<link rel="canonical" href="[^"]+"')]:
+            if not re.search(pattern, text):
+                problems.append(f"{rel}: missing {label}")
+    return problems
+
+
 def replace_block(text, name, content):
     """Replace everything between <!-- seo:NAME:start --> and <!-- seo:NAME:end -->."""
     pattern = re.compile(rf"(<!-- seo:{name}:start[^>]*-->\n)(.*?)(\s*<!-- seo:{name}:end -->)", re.S)
@@ -164,14 +193,31 @@ def replace_block(text, name, content):
 
 
 def main():
+    check = "--check" in sys.argv[1:]
     projects, techs = ordered_projects(), technologies()
     page = INDEX.read_text(encoding="utf-8")
     page = replace_block(page, "jsonld", json_ld(projects, techs))
     page = replace_block(page, "projects", projects_noscript(projects))
     page = replace_block(page, "technologies", technologies_noscript(techs))
-    INDEX.write_text(page, encoding="utf-8")
-    (ROOT / "llms.txt").write_text(llms_txt(projects, techs), encoding="utf-8")
-    print(f"Updated index.html and llms.txt: {len(projects)} projects, {len(techs)} technologies.")
+    outputs = {INDEX: page, ROOT / "llms.txt": llms_txt(projects, techs), ROOT / "sitemap.xml": sitemap()}
+
+    stale = [p for p, text in outputs.items() if not p.exists() or p.read_text(encoding="utf-8") != text]
+    if check:
+        problems = missing_tags()
+        for problem in problems:
+            print(problem)
+        if stale:
+            names = ", ".join(p.relative_to(ROOT).as_posix() for p in stale)
+            print(f"SEO/GEO content is out of date in: {names}\nRun: python3 scripts/build_seo.py")
+            sys.exit(1)
+        if problems:
+            sys.exit(1)
+        print("SEO/GEO content is up to date.")
+        return
+    for p in stale:
+        p.write_text(outputs[p], encoding="utf-8")
+    print(f"{len(projects)} projects, {len(techs)} technologies, {sitemap().count('<loc>')} pages in the sitemap. "
+          f"Updated: {', '.join(p.relative_to(ROOT).as_posix() for p in stale) or 'nothing (already up to date)'}.")
 
 
 if __name__ == "__main__":
