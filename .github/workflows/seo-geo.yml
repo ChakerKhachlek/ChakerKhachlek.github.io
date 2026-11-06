@@ -1,0 +1,56 @@
+name: SEO/GEO update
+
+# Keeps the generated SEO/GEO content (noscript lists, structured data, llms.txt,
+# sitemap.xml) in sync with the site automatically: on every push it runs
+# scripts/build_seo.py, commits whatever changed back to the same branch, and on
+# main asks GitHub Pages to publish that commit. It then fails only if a page is
+# missing its title, meta description or canonical link, which need a person.
+on:
+  push:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pages: write
+
+concurrency:
+  group: seo-geo-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  seo-geo:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Regenerate SEO/GEO content
+        run: python3 scripts/build_seo.py
+
+      - name: Commit regenerated files
+        id: commit
+        run: |
+          git add index.html llms.txt sitemap.xml
+          if git diff --cached --quiet; then
+            echo "Already up to date."
+            echo "changed=false" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git commit -m "Update SEO/GEO content"
+          git push
+          echo "changed=true" >> "$GITHUB_OUTPUT"
+
+      # Pushes made with the workflow token don't start a Pages build on their own.
+      - name: Publish the updated site
+        if: steps.commit.outputs.changed == 'true' && github.ref == 'refs/heads/main'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh api -X POST "repos/${{ github.repository }}/pages/builds"
+
+      - name: Check every page has its SEO tags
+        run: python3 scripts/build_seo.py --check
