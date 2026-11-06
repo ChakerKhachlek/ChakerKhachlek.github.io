@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://chakerkhachlek.github.io/</loc><lastmod>2026-10-31</lastmod></url>
-  <url><loc>https://chakerkhachlek.github.io/cv.html</loc><lastmod>2026-10-31</lastmod></url>
-  <url><loc>https://chakerkhachlek.github.io/cv-ats.html</loc><lastmod>2026-10-31</lastmod></url>
-  <url><loc>https://chakerkhachlek.github.io/cheat-sheets/docker.html</loc><lastmod>2026-10-31</lastmod></url>
-  <url><loc>https://chakerkhachlek.github.io/cheat-sheets/kubernetes.html</loc><lastmod>2026-10-31</lastmod></url>
-  <url><loc>https://chakerkhachlek.github.io/cheat-sheets/mysql.html</loc><lastmod>2026-10-31</lastmod></url>
-  <url><loc>https://chakerkhachlek.github.io/cheat-sheets/php.html</loc><lastmod>2026-10-31</lastmod></url>
+  <url><loc>https://chakerkhachlek.github.io/cheat-sheets/docker.html</loc></url>
+  <url><loc>https://chakerkhachlek.github.io/cheat-sheets/kubernetes.html</loc></url>
+  <url><loc>https://chakerkhachlek.github.io/cheat-sheets/mysql.html</loc></url>
+  <url><loc>https://chakerkhachlek.github.io/cheat-sheets/php.html</loc></url>
+  <url><loc>https://chakerkhachlek.github.io/cv-ats.html</loc></url>
+  <url><loc>https://chakerkhachlek.github.io/cv.html</loc></url>
+  <url><loc>https://chakerkhachlek.github.io/</loc></url>
 </urlset>
