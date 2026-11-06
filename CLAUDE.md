@@ -7,14 +7,17 @@ no build step). Projects and technologies come from `assets/json/projects.json` 
 ## Rule: update SEO/GEO with every change to the website
 
 Any change to the site (content, projects, technologies, pages, CV) must ship with its SEO/GEO
-update in the same change. Before committing:
+update in the same change. This is automated, but still do it locally before committing:
 
 1. Run `python3 scripts/build_seo.py`. It regenerates from the JSON data the `<noscript>`
    copies of the projects and technologies lists in `index.html` (for crawlers that don't run
    JavaScript), the schema.org JSON-LD, `llms.txt` and `sitemap.xml`. Never edit the
    `<!-- seo:... -->` blocks, `llms.txt` or `sitemap.xml` by hand.
 2. Run `python3 scripts/build_seo.py --check`; it must print "SEO/GEO content is up to date".
-   The "SEO/GEO check" GitHub workflow runs the same check on every push and pull request.
+   The "SEO/GEO update" GitHub workflow runs the script on every push, commits any regenerated
+   files back to the branch, republishes the site when that happens on `main`, and fails if a
+   page is missing its title, description or canonical link. Pull before pushing again after
+   it has committed.
 3. A new page needs a `<title>`, a `<meta name="description">`, a
    `<link rel="canonical" href="https://chakerkhachlek.github.io/...">`, the Google Analytics
    tag (`G-8K4Z6ZJ7WC`) and the favicon links. The check enforces the first three.
