@@ -1,0 +1,160 @@
+{
+  "title": "MySQL Complete Cheat Sheet",
+  "modules": [
+    {
+      "title": "1. MySQL Basics",
+      "lessons": [
+        {
+          "title": "Login & Exit",
+          "note": "Access MySQL server and exit.",
+          "code": "mysql -u root -p\nexit;"
+        },
+        {
+          "title": "Show Databases",
+          "note": "List all databases.",
+          "code": "SHOW DATABASES;"
+        },
+        {
+          "title": "Create & Drop Database",
+          "note": "Create or remove a database.",
+          "code": "CREATE DATABASE mydb;\nDROP DATABASE mydb;"
+        }
+      ]
+    },
+    {
+      "title": "2. Tables",
+      "lessons": [
+        {
+          "title": "Create Table",
+          "note": "Define a new table.",
+          "code": "CREATE TABLE users (\n  id INT PRIMARY KEY AUTO_INCREMENT,\n  name VARCHAR(50),\n  email VARCHAR(100) UNIQUE,\n  created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP\n);"
+        },
+        {
+          "title": "Show & Describe Table",
+          "note": "List tables or table structure.",
+          "code": "SHOW TABLES;\nDESCRIBE users;"
+        },
+        {
+          "title": "Drop Table",
+          "note": "Remove a table.",
+          "code": "DROP TABLE users;"
+        }
+      ]
+    },
+    {
+      "title": "3. CRUD Operations",
+      "lessons": [
+        {
+          "title": "Insert Data",
+          "note": "Add rows into a table.",
+          "code": "INSERT INTO users (name, email) VALUES ('Alice', 'alice@example.com');"
+        },
+        {
+          "title": "Select Data",
+          "note": "Retrieve rows from a table.",
+          "code": "SELECT * FROM users;\nSELECT name, email FROM users WHERE id = 1;"
+        },
+        {
+          "title": "Update Data",
+          "note": "Modify existing rows.",
+          "code": "UPDATE users SET email = 'alice@new.com' WHERE id = 1;"
+        },
+        {
+          "title": "Delete Data",
+          "note": "Remove rows from a table.",
+          "code": "DELETE FROM users WHERE id = 1;"
+        }
+      ]
+    },
+    {
+      "title": "4. Indexes & Keys",
+      "lessons": [
+        {
+          "title": "Primary & Unique Keys",
+          "note": "Define unique identifiers.",
+          "code": "ALTER TABLE users ADD PRIMARY KEY(id);\nALTER TABLE users ADD UNIQUE(email);"
+        },
+        {
+          "title": "Foreign Keys",
+          "note": "Maintain relationships between tables.",
+          "code": "ALTER TABLE orders ADD CONSTRAINT fk_user FOREIGN KEY (user_id) REFERENCES users(id);"
+        },
+        {
+          "title": "Indexes",
+          "note": "Speed up queries.",
+          "code": "CREATE INDEX idx_name ON users(name);"
+        }
+      ]
+    },
+    {
+      "title": "5. Queries & Filtering",
+      "lessons": [
+        {
+          "title": "WHERE Clause",
+          "note": "Filter rows with conditions.",
+          "code": "SELECT * FROM users WHERE name = 'Alice';"
+        },
+        {
+          "title": "ORDER BY & LIMIT",
+          "note": "Sort and limit results.",
+          "code": "SELECT * FROM users ORDER BY created_at DESC LIMIT 5;"
+        },
+        {
+          "title": "JOINs",
+          "note": "Combine tables.",
+          "code": "SELECT u.name, o.id FROM users u\nJOIN orders o ON u.id = o.user_id;"
+        },
+        {
+          "title": "GROUP BY & Aggregate",
+          "note": "Group rows and calculate sums, counts, etc.",
+          "code": "SELECT user_id, COUNT(*) as total FROM orders GROUP BY user_id;"
+        }
+      ]
+    },
+    {
+      "title": "6. Advanced Topics",
+      "lessons": [
+        {
+          "title": "Views",
+          "note": "Virtual tables for queries.",
+          "code": "CREATE VIEW user_orders AS\nSELECT u.name, o.id FROM users u JOIN orders o ON u.id = o.user_id;"
+        },
+        {
+          "title": "Stored Procedures",
+          "note": "Reusable SQL code.",
+          "code": "DELIMITER $$\nCREATE PROCEDURE GetUserCount()\nBEGIN\n  SELECT COUNT(*) FROM users;\nEND $$\nDELIMITER ;"
+        },
+        {
+          "title": "Triggers",
+          "note": "Automatic actions on table changes.",
+          "code": "CREATE TRIGGER before_insert_user\nBEFORE INSERT ON users\nFOR EACH ROW SET NEW.created_at = NOW();"
+        },
+        {
+          "title": "Transactions",
+          "note": "Ensure atomic operations.",
+          "code": "START TRANSACTION;\nUPDATE accounts SET balance = balance - 100 WHERE id = 1;\nUPDATE accounts SET balance = balance + 100 WHERE id = 2;\nCOMMIT;"
+        }
+      ]
+    },
+    {
+      "title": "7. Miscellaneous",
+      "lessons": [
+        {
+          "title": "Backup & Restore",
+          "note": "Dump and import databases.",
+          "code": "mysqldump -u root -p mydb > backup.sql\nmysql -u root -p mydb < backup.sql"
+        },
+        {
+          "title": "User Management",
+          "note": "Create users and grant privileges.",
+          "code": "CREATE USER 'bob'@'localhost' IDENTIFIED BY 'password';\nGRANT ALL PRIVILEGES ON mydb.* TO 'bob'@'localhost';\nFLUSH PRIVILEGES;"
+        },
+        {
+          "title": "Show Process & Status",
+          "note": "Monitor MySQL server.",
+          "code": "SHOW PROCESSLIST;\nSHOW STATUS;"
+        }
+      ]
+    }
+  ]
+}

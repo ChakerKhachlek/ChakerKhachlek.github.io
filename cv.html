@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html lang="en">
+<!--
+    Hello, fellow developer 👋
+    You opened the source of a CV. That's exactly the kind of curiosity I look for in a team.
+    → chaker.khachlek@gmail.com
+-->
+
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-8K4Z6ZJ7WC"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-8K4Z6ZJ7WC');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chaker Khachlek — CV</title>
+    <meta name="description" content="CV of Chaker Khachlek, backend software engineer and web developer in Paris, in English and French.">
+    <link rel="canonical" href="https://chakerkhachlek.github.io/cv.html">
+    <link rel="icon" href="assets/img/icons/favicon.ico" sizes="any">
+    <link rel="icon" href="assets/img/icons/favicon-48.png" type="image/png" sizes="48x48">
+    <link rel="icon" href="assets/img/icons/favicon-192.png" type="image/png" sizes="192x192">
+    <link rel="apple-touch-icon" href="assets/img/icons/apple-touch-icon.png">
+    <style>
+        /* Static (non-variable) fonts so PDF exports embed TrueType, which ATS parsers read reliably. */
+        @font-face { font-family: 'Inter'; font-weight: 400; font-display: swap; src: url('assets/fonts/Inter-400.woff') format('woff'); }
+        @font-face { font-family: 'Inter'; font-weight: 500; font-display: swap; src: url('assets/fonts/Inter-500.woff') format('woff'); }
+        @font-face { font-family: 'Inter'; font-weight: 600; font-display: swap; src: url('assets/fonts/Inter-600.woff') format('woff'); }
+        @font-face { font-family: 'Inter'; font-weight: 700; font-display: swap; src: url('assets/fonts/Inter-700.woff') format('woff'); }
+        @font-face { font-family: 'Inter'; font-weight: 800; font-display: swap; src: url('assets/fonts/Inter-800.woff') format('woff'); }
+        @font-face { font-family: 'Fira Code'; font-weight: 400; font-display: swap; src: url('assets/fonts/FiraCode-400.woff') format('woff'); }
+        @font-face { font-family: 'Fira Code'; font-weight: 500; font-display: swap; src: url('assets/fonts/FiraCode-500.woff') format('woff'); }
+        @font-face { font-family: 'Fira Code'; font-weight: 600; font-display: swap; src: url('assets/fonts/FiraCode-600.woff') format('woff'); }
+
+        :root {
+            --ink: #16181d;
+            --muted: #5b6270;
+            --line: #e3e6ea;
+            --paper: #ffffff;
+            --night: #121212;
+            --accent: #16a34a;
+            --accent-soft: #e8f7ee;
+            --mono: 'Fira Code', ui-monospace, monospace;
+            --sans: 'Inter', system-ui, sans-serif;
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+
+        html[lang="en"] .fr, html[lang="fr"] .en { display: none !important; }
+
+        body {
+            background: #2a2d33;
+            color: var(--ink);
+            font: 400 9.4pt/1.45 var(--sans);
+            -webkit-print-color-adjust: exact;
+            print-color-adjust: exact;
+        }
+
+        a { color: inherit; text-decoration: none; }
+
+        /* ---- screen toolbar ---- */
+        .toolbar {
+            position: sticky; top: 0; z-index: 10;
+            display: flex; gap: 8px; justify-content: center; flex-wrap: wrap;
+            padding: 10px 16px;
+            background: var(--night);
+            font-family: var(--mono); font-size: 13px;
+        }
+        .toolbar button, .toolbar a {
+            background: transparent; color: #e5e7eb; cursor: pointer;
+            border: 1px solid #3a3f47; border-radius: 6px;
+            padding: 6px 12px; font: inherit;
+        }
+        .toolbar button:hover, .toolbar a:hover { border-color: var(--accent); color: #fff; }
+        .toolbar button[aria-pressed="true"] { background: var(--accent); border-color: var(--accent); color: #fff; }
+
+        /* ---- A4 sheet ---- */
+        .sheet {
+            width: 210mm; min-height: 297mm;
+            margin: 24px auto;
+            background: var(--paper);
+            box-shadow: 0 20px 60px rgba(0, 0, 0, .45);
+            overflow: hidden;
+        }
+
+        /* ---- terminal header ---- */
+        header {
+            background: var(--night);
+            color: #f3f4f6;
+            padding: 0 14mm 9mm;
+        }
+        .term-bar {
+            display: flex; align-items: center; gap: 6px;
+            padding: 4mm 0 5mm;
+            font: 400 8pt var(--mono); color: #6b7280;
+        }
+        .term-bar i { width: 9px; height: 9px; border-radius: 50%; display: inline-block; }
+        .term-bar i:nth-child(1) { background: #ff5f57; }
+        .term-bar i:nth-child(2) { background: #febc2e; }
+        .term-bar i:nth-child(3) { background: #28c840; }
+        .term-bar span { margin-left: auto; }
+
+        .prompt { font: 400 9.5pt var(--mono); color: #9ca3af; }
+        .prompt b { color: #4ade80; font-weight: 500; }
+        .prompt .cmd { color: #f3f4f6; }
+        .caret {
+            display: inline-block; width: .55em; height: 1.05em; margin-left: 2px;
+            background: #4ade80; vertical-align: -2px;
+            animation: blink 1s steps(1) infinite;
+        }
+        @keyframes blink { 50% { opacity: 0; } }
+
+        .head-row { display: flex; align-items: flex-end; justify-content: space-between; gap: 8mm; margin-top: 3mm; }
+        h1 {
+            font: 800 27pt/1.05 var(--sans);
+            letter-spacing: -.02em;
+            margin-top: 1.5mm;
+        }
+        h1 span { color: #4ade80; }
+        .role { font: 500 10.5pt var(--mono); color: #d1d5db; margin-top: 2mm; }
+        .contacts {
+            display: grid; gap: 1.2mm; text-align: right;
+            font: 400 8.2pt var(--mono); color: #d1d5db; white-space: nowrap;
+        }
+        .contacts a:hover { color: #4ade80; }
+        .contacts em { color: #4ade80; font-style: normal; }
+
+        /* ---- impact strip ---- */
+        .impact {
+            display: grid; grid-template-columns: repeat(4, 1fr);
+            border-bottom: 1px solid var(--line);
+        }
+        .impact div { padding: 4mm 3mm; text-align: center; border-right: 1px solid var(--line); }
+        .impact div:last-child { border-right: 0; }
+        .impact strong { display: block; font: 800 17pt/1 var(--sans); color: var(--accent); letter-spacing: -.02em; }
+        .impact small { display: block; margin-top: 1.3mm; font-size: 7.6pt; color: var(--muted); line-height: 1.3; }
+
+        /* ---- body grid ---- */
+        .body { display: grid; grid-template-columns: 1fr 62mm; }
+        main { padding: 6mm 7mm 6mm 14mm; }
+        aside { padding: 6mm 12mm 6mm 6mm; background: #f7f8fa; border-left: 1px solid var(--line); }
+
+        h2 {
+            font: 600 8.6pt var(--mono);
+            text-transform: uppercase; letter-spacing: .12em;
+            color: var(--ink);
+            margin: 0 0 3mm;
+            display: flex; align-items: center; gap: 2mm;
+        }
+        h2::before { content: "//"; color: var(--accent); }
+        h2::after { content: ""; flex: 1; height: 1px; background: var(--line); }
+        section + section { margin-top: 5mm; }
+
+        .item { margin-bottom: 3.6mm; break-inside: avoid; }
+        .item-head { display: flex; justify-content: space-between; align-items: baseline; gap: 4mm; }
+        .item h3 { font: 700 10pt var(--sans); }
+        .item h3 small { font-weight: 500; color: var(--muted); }
+        .date { font: 500 7.8pt var(--mono); color: var(--accent); white-space: nowrap; }
+        .meta { font-size: 8.3pt; color: var(--muted); margin-top: .3mm; }
+        .item ul, .featured ul { margin: 1.2mm 0 0 4mm; }
+        .item li, .featured li { margin-bottom: .6mm; }
+        .item li::marker, .featured li::marker { color: var(--accent); content: "▸ "; }
+        .tags { display: flex; flex-wrap: wrap; gap: 1.2mm; margin-top: 1.5mm; }
+        .tags span {
+            font: 400 7.2pt var(--mono);
+            padding: .5mm 1.8mm; border-radius: 3px;
+            background: var(--accent-soft); color: #166534;
+        }
+
+        /* ---- featured project ---- */
+        .featured {
+            position: relative;
+            border: 1.5px solid var(--accent); border-radius: 6px;
+            padding: 3.5mm 4mm; margin-bottom: 4mm;
+            display: grid; grid-template-columns: 1fr 23mm; gap: 4mm;
+            break-inside: avoid;
+        }
+        .featured .badge {
+            position: absolute; top: -2.4mm; left: 3mm;
+            background: var(--accent); color: #fff;
+            font: 600 6.8pt var(--mono); letter-spacing: .08em;
+            padding: .6mm 2mm; border-radius: 3px;
+        }
+        .featured .qr-box { text-align: center; align-self: center; }
+        .qr { width: 21mm; height: 21mm; color: var(--ink); display: block; margin: 0 auto; }
+        .meta .press { color: var(--accent); font-weight: 600; }
+        .qr-box small { display: block; margin-top: 1.2mm; font: 600 6.8pt var(--mono); color: var(--accent); }
+
+        /* ---- sidebar ---- */
+        .skill-group { margin-bottom: 3mm; }
+        .skill-group h4 { font: 600 7.6pt var(--mono); color: var(--muted); margin-bottom: 1.4mm; }
+        .logos { display: flex; flex-wrap: wrap; gap: 1.4mm; }
+        .logos span {
+            display: inline-flex; align-items: center; gap: 1.2mm;
+            background: #fff; border: 1px solid var(--line); border-radius: 4px;
+            padding: .7mm 1.6mm; font-size: 7.6pt;
+        }
+        .logos img { width: 3.6mm; height: 3.6mm; object-fit: contain; }
+
+        .timeline { list-style: none; position: relative; padding-left: 4.5mm; }
+        .timeline::before {
+            content: ""; position: absolute; left: 1.1mm; top: 1.5mm; bottom: 1.5mm;
+            width: 1.5px; background: linear-gradient(var(--accent), #b7e4c7);
+        }
+        .timeline li { position: relative; margin-bottom: 2.8mm; break-inside: avoid; }
+        .timeline li::before {
+            content: ""; position: absolute; left: -4.5mm; top: 1.1mm;
+            width: 2.6mm; height: 2.6mm; border-radius: 50%;
+            background: #fff; border: 1.5px solid var(--accent);
+        }
+        .timeline li.now::before { background: var(--accent); box-shadow: 0 0 0 1.2mm rgba(22, 163, 74, .18); }
+        .timeline .yr { font: 600 7.4pt var(--mono); color: var(--accent); }
+        .timeline b { display: block; font-size: 8.6pt; line-height: 1.3; }
+        .timeline small { display: block; font-size: 7.6pt; color: var(--muted); line-height: 1.35; }
+
+        .plain { list-style: none; }
+        .plain li { margin-bottom: 2mm; font-size: 8.2pt; line-height: 1.35; }
+        .plain li small { display: block; color: var(--muted); font: 400 7.2pt var(--mono); }
+
+        .lang-bar { margin-bottom: 2.2mm; font-size: 8.2pt; }
+        .lang-bar div { height: 1.4mm; border-radius: 1mm; background: var(--line); margin-top: .8mm; overflow: hidden; }
+        .lang-bar div i { display: block; height: 100%; background: var(--accent); }
+
+        footer {
+            padding: 3mm 14mm 5mm;
+            display: flex; justify-content: flex-end;
+            font: 400 6.8pt var(--mono); color: #b3b9c2;
+            border-top: 1px solid var(--line);
+        }
+
+        @media screen and (max-width: 860px) {
+            .sheet { width: auto; min-height: 0; margin: 0; }
+            header { padding: 0 16px 24px; }
+            .head-row { flex-direction: column; align-items: flex-start; }
+            .contacts { text-align: left; white-space: normal; }
+            .impact { grid-template-columns: repeat(2, 1fr); }
+            .impact div:nth-child(2) { border-right: 0; }
+            .body { grid-template-columns: 1fr; }
+            main, aside { padding: 20px 16px; }
+            aside { border-left: 0; border-top: 1px solid var(--line); }
+            footer { padding: 12px 16px; flex-direction: column; gap: 4px; }
+        }
+
+        @page { size: A4; margin: 12mm 0 10mm; }
+        @page :first { margin-top: 0; }
+        @media print {
+            body { background: #fff; }
+            .toolbar { display: none; }
+            .sheet { margin: 0; box-shadow: none; width: 210mm; }
+            .caret { animation: none; }
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="toolbar" aria-label="CV options">
+        <a href="index.html">← portfolio</a>
+        <a href="cv-ats.html"><span class="en">ATS version</span><span class="fr">Version ATS</span></a>
+        <button type="button" data-set-lang="en">EN</button>
+        <button type="button" data-set-lang="fr">FR</button>
+        <!-- Pre-rendered PDFs: window.print() is ignored by many mobile and in-app browsers -->
+        <a class="en" href="assets/pdf/chaker_khachlek_cv_eng.pdf" download>⤓ Download PDF</a>
+        <a class="fr" href="assets/pdf/chaker_khachlek_cv_fr.pdf" download>⤓ Télécharger le PDF</a>
+    </nav>
+
+    <article class="sheet">
+        <header>
+            <div class="term-bar"><i></i><i></i><i></i><span>~/cv — zsh</span></div>
+            <p class="prompt"><b>chaker@paris</b>:<b>~</b>$ <span class="cmd" id="typed">whoami</span><span class="caret"></span></p>
+            <div class="head-row">
+                <div>
+                    <h1>Chaker Khachlek<span>.</span></h1>
+                    <p class="role">
+                        <span class="en">Backend Software Engineer · Web Developer</span>
+                        <span class="fr">Ingénieur Logiciel Backend · Développeur Concepteur Web</span>
+                    </p>
+                </div>
+                <div class="contacts">
+                    <a href="mailto:chaker.khachlek@gmail.com"><em>@</em> chaker.khachlek@gmail.com</a>
+                    <a href="tel:+33765702852"><em>☏</em> +33 7 65 70 28 52</a>
+                    <a href="https://www.linkedin.com/in/chaker-khachlek/"><em>in</em> /in/chaker-khachlek</a>
+                    <a href="https://github.com/ChakerKhachlek"><em>gh</em> github.com/ChakerKhachlek</a>
+                    <a href="https://chakerkhachlek.github.io/"><em>↗</em> <span class="en">Portfolio</span><span class="fr">Portfolio</span></a>
+                    <span><em>⌖</em> Paris, France</span>
+                </div>
+            </div>
+        </header>
+
+        <div class="impact">
+            <div><strong>3,500+</strong><small class="en">participants accredited for the African Beach Games</small><small class="fr">participants accrédités aux Jeux Africains de Plage</small></div>
+            <div><strong>54</strong><small class="en">countries served by one platform I built</small><small class="fr">pays servis par une plateforme que j'ai développée</small></div>
+            <div><strong>4</strong><small class="en">real-time multiplayer games shipped solo</small><small class="fr">jeux multijoueurs temps réel livrés en solo</small></div>
+            <div><strong>6+</strong><small class="en">years building for the web</small><small class="fr">années à construire pour le web</small></div>
+        </div>
+
+        <div class="body">
+            <main>
+                <section>
+                    <h2><span class="en">Projects</span><span class="fr">Projets</span></h2>
+
+                    <div class="featured">
+                        <span class="badge"><span class="en">★ FEATURED · LIVE</span><span class="fr">★ À LA UNE · EN LIGNE</span></span>
+                        <div>
+                            <div class="item-head">
+                                <h3>Loasis <small>· playloasis.com</small></h3>
+                                <span class="date">2026</span>
+                            </div>
+                            <p class="meta"><span class="en">Solo developer &amp; creator · featured on <a class="press" href="https://tgtv.tn/tunisian-game/oasis-plaza/">TGTV ↗</a></span><span class="fr">Développeur &amp; créateur solo · présenté sur <a class="press" href="https://tgtv.tn/tunisian-game/oasis-plaza/">TGTV ↗</a></span></p>
+                            <ul>
+                                <li class="en">2D multiplayer virtual café playable in the browser on PC, tablet and mobile: Chkobba, Checkers, Chess and Ludo at the tables, with friends, online presence and AI bots.</li>
+                                <li class="fr">Café virtuel 2D multijoueur jouable dans le navigateur (PC, tablette, mobile) : Chkobba, Dame, Échecs et Ludo aux tables, avec amis, présence en ligne et bots IA.</li>
+                                <li class="en">Custom engine built with AI agents, including in-game map and decoration editors.</li>
+                                <li class="fr">Moteur sur-mesure construit avec des agents IA, incluant des éditeurs de carte et de décoration en jeu.</li>
+                                <li class="en">Self-hosted LiveKit for table-side voice chat plus a custom WebSocket server, on a dedicated, secured VPC.</li>
+                                <li class="fr">LiveKit auto-hébergé pour le chat vocal aux tables et serveur WebSocket sur-mesure, sur un VPC dédié et sécurisé.</li>
+                            </ul>
+                            <div class="tags"><span>WebSockets</span><span>LiveKit</span><span>WebRTC</span><span>Game AI</span><span>VPC</span><span>AI agents</span></div>
+                        </div>
+                        <a class="qr-box" href="https://www.playloasis.com">
+                            <svg class="qr" viewBox="0 0 25 25" xmlns="http://www.w3.org/2000/svg" shape-rendering="crispEdges" role="img" aria-label="QR code to playloasis.com"><path d="M0 0h1v1h-1zM1 0h1v1h-1zM2 0h1v1h-1zM3 0h1v1h-1zM4 0h1v1h-1zM5 0h1v1h-1zM6 0h1v1h-1zM8 0h1v1h-1zM10 0h1v1h-1zM14 0h1v1h-1zM15 0h1v1h-1zM16 0h1v1h-1zM18 0h1v1h-1zM19 0h1v1h-1zM20 0h1v1h-1zM21 0h1v1h-1zM22 0h1v1h-1zM23 0h1v1h-1zM24 0h1v1h-1zM0 1h1v1h-1zM6 1h1v1h-1zM11 1h1v1h-1zM12 1h1v1h-1zM18 1h1v1h-1zM24 1h1v1h-1zM0 2h1v1h-1zM2 2h1v1h-1zM3 2h1v1h-1zM4 2h1v1h-1zM6 2h1v1h-1zM9 2h1v1h-1zM14 2h1v1h-1zM15 2h1v1h-1zM18 2h1v1h-1zM20 2h1v1h-1zM21 2h1v1h-1zM22 2h1v1h-1zM24 2h1v1h-1zM0 3h1v1h-1zM2 3h1v1h-1zM3 3h1v1h-1zM4 3h1v1h-1zM6 3h1v1h-1zM8 3h1v1h-1zM9 3h1v1h-1zM10 3h1v1h-1zM11 3h1v1h-1zM13 3h1v1h-1zM14 3h1v1h-1zM16 3h1v1h-1zM18 3h1v1h-1zM20 3h1v1h-1zM21 3h1v1h-1zM22 3h1v1h-1zM24 3h1v1h-1zM0 4h1v1h-1zM2 4h1v1h-1zM3 4h1v1h-1zM4 4h1v1h-1zM6 4h1v1h-1zM8 4h1v1h-1zM9 4h1v1h-1zM12 4h1v1h-1zM13 4h1v1h-1zM14 4h1v1h-1zM15 4h1v1h-1zM16 4h1v1h-1zM18 4h1v1h-1zM20 4h1v1h-1zM21 4h1v1h-1zM22 4h1v1h-1zM24 4h1v1h-1zM0 5h1v1h-1zM6 5h1v1h-1zM8 5h1v1h-1zM9 5h1v1h-1zM10 5h1v1h-1zM12 5h1v1h-1zM13 5h1v1h-1zM14 5h1v1h-1zM16 5h1v1h-1zM18 5h1v1h-1zM24 5h1v1h-1zM0 6h1v1h-1zM1 6h1v1h-1zM2 6h1v1h-1zM3 6h1v1h-1zM4 6h1v1h-1zM5 6h1v1h-1zM6 6h1v1h-1zM8 6h1v1h-1zM10 6h1v1h-1zM12 6h1v1h-1zM14 6h1v1h-1zM16 6h1v1h-1zM18 6h1v1h-1zM19 6h1v1h-1zM20 6h1v1h-1zM21 6h1v1h-1zM22 6h1v1h-1zM23 6h1v1h-1zM24 6h1v1h-1zM8 7h1v1h-1zM9 7h1v1h-1zM14 7h1v1h-1zM15 7h1v1h-1zM16 7h1v1h-1zM0 8h1v1h-1zM4 8h1v1h-1zM6 8h1v1h-1zM7 8h1v1h-1zM8 8h1v1h-1zM9 8h1v1h-1zM10 8h1v1h-1zM11 8h1v1h-1zM15 8h1v1h-1zM16 8h1v1h-1zM17 8h1v1h-1zM18 8h1v1h-1zM19 8h1v1h-1zM20 8h1v1h-1zM21 8h1v1h-1zM24 8h1v1h-1zM2 9h1v1h-1zM4 9h1v1h-1zM5 9h1v1h-1zM7 9h1v1h-1zM8 9h1v1h-1zM9 9h1v1h-1zM12 9h1v1h-1zM13 9h1v1h-1zM15 9h1v1h-1zM16 9h1v1h-1zM17 9h1v1h-1zM20 9h1v1h-1zM21 9h1v1h-1zM23 9h1v1h-1zM1 10h1v1h-1zM3 10h1v1h-1zM4 10h1v1h-1zM5 10h1v1h-1zM6 10h1v1h-1zM7 10h1v1h-1zM10 10h1v1h-1zM13 10h1v1h-1zM15 10h1v1h-1zM19 10h1v1h-1zM20 10h1v1h-1zM21 10h1v1h-1zM22 10h1v1h-1zM0 11h1v1h-1zM1 11h1v1h-1zM4 11h1v1h-1zM5 11h1v1h-1zM7 11h1v1h-1zM9 11h1v1h-1zM10 11h1v1h-1zM14 11h1v1h-1zM15 11h1v1h-1zM16 11h1v1h-1zM18 11h1v1h-1zM19 11h1v1h-1zM22 11h1v1h-1zM23 11h1v1h-1zM0 12h1v1h-1zM1 12h1v1h-1zM2 12h1v1h-1zM3 12h1v1h-1zM6 12h1v1h-1zM7 12h1v1h-1zM8 12h1v1h-1zM10 12h1v1h-1zM12 12h1v1h-1zM17 12h1v1h-1zM18 12h1v1h-1zM21 12h1v1h-1zM22 12h1v1h-1zM23 12h1v1h-1zM24 12h1v1h-1zM0 13h1v1h-1zM3 13h1v1h-1zM12 13h1v1h-1zM14 13h1v1h-1zM15 13h1v1h-1zM16 13h1v1h-1zM17 13h1v1h-1zM20 13h1v1h-1zM23 13h1v1h-1zM5 14h1v1h-1zM6 14h1v1h-1zM7 14h1v1h-1zM11 14h1v1h-1zM12 14h1v1h-1zM15 14h1v1h-1zM16 14h1v1h-1zM19 14h1v1h-1zM20 14h1v1h-1zM21 14h1v1h-1zM22 14h1v1h-1zM2 15h1v1h-1zM7 15h1v1h-1zM8 15h1v1h-1zM9 15h1v1h-1zM11 15h1v1h-1zM12 15h1v1h-1zM14 15h1v1h-1zM15 15h1v1h-1zM18 15h1v1h-1zM19 15h1v1h-1zM20 15h1v1h-1zM22 15h1v1h-1zM23 15h1v1h-1zM0 16h1v1h-1zM1 16h1v1h-1zM3 16h1v1h-1zM6 16h1v1h-1zM8 16h1v1h-1zM9 16h1v1h-1zM11 16h1v1h-1zM12 16h1v1h-1zM15 16h1v1h-1zM16 16h1v1h-1zM17 16h1v1h-1zM18 16h1v1h-1zM19 16h1v1h-1zM20 16h1v1h-1zM21 16h1v1h-1zM22 16h1v1h-1zM8 17h1v1h-1zM10 17h1v1h-1zM11 17h1v1h-1zM13 17h1v1h-1zM16 17h1v1h-1zM20 17h1v1h-1zM0 18h1v1h-1zM1 18h1v1h-1zM2 18h1v1h-1zM3 18h1v1h-1zM4 18h1v1h-1zM5 18h1v1h-1zM6 18h1v1h-1zM8 18h1v1h-1zM9 18h1v1h-1zM10 18h1v1h-1zM11 18h1v1h-1zM12 18h1v1h-1zM13 18h1v1h-1zM16 18h1v1h-1zM18 18h1v1h-1zM20 18h1v1h-1zM0 19h1v1h-1zM6 19h1v1h-1zM9 19h1v1h-1zM10 19h1v1h-1zM12 19h1v1h-1zM14 19h1v1h-1zM16 19h1v1h-1zM20 19h1v1h-1zM21 19h1v1h-1zM22 19h1v1h-1zM23 19h1v1h-1zM24 19h1v1h-1zM0 20h1v1h-1zM2 20h1v1h-1zM3 20h1v1h-1zM4 20h1v1h-1zM6 20h1v1h-1zM8 20h1v1h-1zM10 20h1v1h-1zM11 20h1v1h-1zM12 20h1v1h-1zM14 20h1v1h-1zM16 20h1v1h-1zM17 20h1v1h-1zM18 20h1v1h-1zM19 20h1v1h-1zM20 20h1v1h-1zM21 20h1v1h-1zM22 20h1v1h-1zM0 21h1v1h-1zM2 21h1v1h-1zM3 21h1v1h-1zM4 21h1v1h-1zM6 21h1v1h-1zM9 21h1v1h-1zM10 21h1v1h-1zM11 21h1v1h-1zM14 21h1v1h-1zM18 21h1v1h-1zM19 21h1v1h-1zM22 21h1v1h-1zM23 21h1v1h-1zM24 21h1v1h-1zM0 22h1v1h-1zM2 22h1v1h-1zM3 22h1v1h-1zM4 22h1v1h-1zM6 22h1v1h-1zM11 22h1v1h-1zM12 22h1v1h-1zM13 22h1v1h-1zM14 22h1v1h-1zM15 22h1v1h-1zM16 22h1v1h-1zM17 22h1v1h-1zM18 22h1v1h-1zM21 22h1v1h-1zM23 22h1v1h-1zM0 23h1v1h-1zM6 23h1v1h-1zM9 23h1v1h-1zM10 23h1v1h-1zM18 23h1v1h-1zM19 23h1v1h-1zM20 23h1v1h-1zM21 23h1v1h-1zM22 23h1v1h-1zM23 23h1v1h-1zM0 24h1v1h-1zM1 24h1v1h-1zM2 24h1v1h-1zM3 24h1v1h-1zM4 24h1v1h-1zM5 24h1v1h-1zM6 24h1v1h-1zM8 24h1v1h-1zM10 24h1v1h-1zM12 24h1v1h-1zM15 24h1v1h-1zM22 24h1v1h-1zM23 24h1v1h-1zM24 24h1v1h-1z" fill="currentColor"/></svg>
+                            <small class="en">SCAN TO PLAY</small><small class="fr">SCANNEZ POUR JOUER</small>
+                        </a>
+                    </div>
+
+                    <div class="featured">
+                        <span class="badge"><span class="en">★ FOUNDER · LIVE</span><span class="fr">★ FONDATEUR · EN LIGNE</span></span>
+                        <div>
+                            <div class="item-head">
+                                <h3>Open Prompt Registry <small>· <a href="https://www.opregistry.com">opregistry.com</a></small></h3>
+                                <span class="date"><span class="en">May 2025 – Present</span><span class="fr">Mai 2025 – Présent</span></span>
+                            </div>
+                            <p class="meta"><span class="en">Developer &amp; founder</span><span class="fr">Développeur &amp; fondateur</span></p>
+                            <ul>
+                                <li class="en">Designed, built and deployed a platform to organise, version and share AI prompts.</li>
+                                <li class="fr">Conception, développement et déploiement d'une plateforme pour organiser, versionner et partager des prompts IA.</li>
+                                <li class="en">Prompt versioning, organisation and a collaborative space for prompt engineers, with authentication and a robust backend.</li>
+                                <li class="fr">Versioning et organisation des prompts, espace collaboratif pour prompt engineers, avec authentification et backend robuste.</li>
+                            </ul>
+                            <div class="tags"><span>Next.js</span><span>TypeScript</span><span>Prisma</span><span>NextAuth.js</span></div>
+                        </div>
+                        <a class="qr-box" href="https://www.opregistry.com">
+                            <svg class="qr" viewBox="0 0 25 25" xmlns="http://www.w3.org/2000/svg" shape-rendering="crispEdges" role="img" aria-label="QR code to opregistry.com"><path d="M0 0h1v1h-1zM1 0h1v1h-1zM2 0h1v1h-1zM3 0h1v1h-1zM4 0h1v1h-1zM5 0h1v1h-1zM6 0h1v1h-1zM8 0h1v1h-1zM9 0h1v1h-1zM10 0h1v1h-1zM12 0h1v1h-1zM14 0h1v1h-1zM15 0h1v1h-1zM16 0h1v1h-1zM18 0h1v1h-1zM19 0h1v1h-1zM20 0h1v1h-1zM21 0h1v1h-1zM22 0h1v1h-1zM23 0h1v1h-1zM24 0h1v1h-1zM0 1h1v1h-1zM6 1h1v1h-1zM9 1h1v1h-1zM10 1h1v1h-1zM11 1h1v1h-1zM12 1h1v1h-1zM13 1h1v1h-1zM14 1h1v1h-1zM16 1h1v1h-1zM18 1h1v1h-1zM24 1h1v1h-1zM0 2h1v1h-1zM2 2h1v1h-1zM3 2h1v1h-1zM4 2h1v1h-1zM6 2h1v1h-1zM10 2h1v1h-1zM11 2h1v1h-1zM14 2h1v1h-1zM18 2h1v1h-1zM20 2h1v1h-1zM21 2h1v1h-1zM22 2h1v1h-1zM24 2h1v1h-1zM0 3h1v1h-1zM2 3h1v1h-1zM3 3h1v1h-1zM4 3h1v1h-1zM6 3h1v1h-1zM8 3h1v1h-1zM11 3h1v1h-1zM13 3h1v1h-1zM14 3h1v1h-1zM15 3h1v1h-1zM16 3h1v1h-1zM18 3h1v1h-1zM20 3h1v1h-1zM21 3h1v1h-1zM22 3h1v1h-1zM24 3h1v1h-1zM0 4h1v1h-1zM2 4h1v1h-1zM3 4h1v1h-1zM4 4h1v1h-1zM6 4h1v1h-1zM8 4h1v1h-1zM9 4h1v1h-1zM12 4h1v1h-1zM13 4h1v1h-1zM15 4h1v1h-1zM16 4h1v1h-1zM18 4h1v1h-1zM20 4h1v1h-1zM21 4h1v1h-1zM22 4h1v1h-1zM24 4h1v1h-1zM0 5h1v1h-1zM6 5h1v1h-1zM8 5h1v1h-1zM9 5h1v1h-1zM14 5h1v1h-1zM16 5h1v1h-1zM18 5h1v1h-1zM24 5h1v1h-1zM0 6h1v1h-1zM1 6h1v1h-1zM2 6h1v1h-1zM3 6h1v1h-1zM4 6h1v1h-1zM5 6h1v1h-1zM6 6h1v1h-1zM8 6h1v1h-1zM10 6h1v1h-1zM12 6h1v1h-1zM14 6h1v1h-1zM16 6h1v1h-1zM18 6h1v1h-1zM19 6h1v1h-1zM20 6h1v1h-1zM21 6h1v1h-1zM22 6h1v1h-1zM23 6h1v1h-1zM24 6h1v1h-1zM8 7h1v1h-1zM9 7h1v1h-1zM10 7h1v1h-1zM11 7h1v1h-1zM12 7h1v1h-1zM14 7h1v1h-1zM15 7h1v1h-1zM0 8h1v1h-1zM4 8h1v1h-1zM6 8h1v1h-1zM7 8h1v1h-1zM8 8h1v1h-1zM11 8h1v1h-1zM17 8h1v1h-1zM18 8h1v1h-1zM19 8h1v1h-1zM20 8h1v1h-1zM21 8h1v1h-1zM24 8h1v1h-1zM0 9h1v1h-1zM1 9h1v1h-1zM2 9h1v1h-1zM13 9h1v1h-1zM15 9h1v1h-1zM16 9h1v1h-1zM17 9h1v1h-1zM20 9h1v1h-1zM21 9h1v1h-1zM23 9h1v1h-1zM0 10h1v1h-1zM3 10h1v1h-1zM4 10h1v1h-1zM5 10h1v1h-1zM6 10h1v1h-1zM9 10h1v1h-1zM10 10h1v1h-1zM11 10h1v1h-1zM14 10h1v1h-1zM15 10h1v1h-1zM16 10h1v1h-1zM19 10h1v1h-1zM20 10h1v1h-1zM21 10h1v1h-1zM22 10h1v1h-1zM2 11h1v1h-1zM3 11h1v1h-1zM5 11h1v1h-1zM8 11h1v1h-1zM9 11h1v1h-1zM10 11h1v1h-1zM11 11h1v1h-1zM12 11h1v1h-1zM16 11h1v1h-1zM18 11h1v1h-1zM19 11h1v1h-1zM22 11h1v1h-1zM23 11h1v1h-1zM0 12h1v1h-1zM2 12h1v1h-1zM3 12h1v1h-1zM6 12h1v1h-1zM7 12h1v1h-1zM9 12h1v1h-1zM12 12h1v1h-1zM16 12h1v1h-1zM17 12h1v1h-1zM18 12h1v1h-1zM21 12h1v1h-1zM22 12h1v1h-1zM23 12h1v1h-1zM24 12h1v1h-1zM0 13h1v1h-1zM1 13h1v1h-1zM2 13h1v1h-1zM3 13h1v1h-1zM5 13h1v1h-1zM8 13h1v1h-1zM9 13h1v1h-1zM12 13h1v1h-1zM13 13h1v1h-1zM15 13h1v1h-1zM16 13h1v1h-1zM17 13h1v1h-1zM20 13h1v1h-1zM23 13h1v1h-1zM3 14h1v1h-1zM4 14h1v1h-1zM6 14h1v1h-1zM11 14h1v1h-1zM12 14h1v1h-1zM13 14h1v1h-1zM15 14h1v1h-1zM16 14h1v1h-1zM19 14h1v1h-1zM20 14h1v1h-1zM21 14h1v1h-1zM22 14h1v1h-1zM3 15h1v1h-1zM4 15h1v1h-1zM5 15h1v1h-1zM7 15h1v1h-1zM10 15h1v1h-1zM11 15h1v1h-1zM12 15h1v1h-1zM15 15h1v1h-1zM16 15h1v1h-1zM18 15h1v1h-1zM19 15h1v1h-1zM20 15h1v1h-1zM22 15h1v1h-1zM23 15h1v1h-1zM0 16h1v1h-1zM1 16h1v1h-1zM2 16h1v1h-1zM5 16h1v1h-1zM6 16h1v1h-1zM7 16h1v1h-1zM11 16h1v1h-1zM12 16h1v1h-1zM16 16h1v1h-1zM17 16h1v1h-1zM18 16h1v1h-1zM19 16h1v1h-1zM20 16h1v1h-1zM21 16h1v1h-1zM22 16h1v1h-1zM8 17h1v1h-1zM9 17h1v1h-1zM10 17h1v1h-1zM11 17h1v1h-1zM15 17h1v1h-1zM16 17h1v1h-1zM20 17h1v1h-1zM0 18h1v1h-1zM1 18h1v1h-1zM2 18h1v1h-1zM3 18h1v1h-1zM4 18h1v1h-1zM5 18h1v1h-1zM6 18h1v1h-1zM8 18h1v1h-1zM11 18h1v1h-1zM12 18h1v1h-1zM16 18h1v1h-1zM18 18h1v1h-1zM20 18h1v1h-1zM0 19h1v1h-1zM6 19h1v1h-1zM9 19h1v1h-1zM12 19h1v1h-1zM14 19h1v1h-1zM16 19h1v1h-1zM20 19h1v1h-1zM21 19h1v1h-1zM22 19h1v1h-1zM23 19h1v1h-1zM24 19h1v1h-1zM0 20h1v1h-1zM2 20h1v1h-1zM3 20h1v1h-1zM4 20h1v1h-1zM6 20h1v1h-1zM8 20h1v1h-1zM9 20h1v1h-1zM10 20h1v1h-1zM11 20h1v1h-1zM12 20h1v1h-1zM14 20h1v1h-1zM16 20h1v1h-1zM17 20h1v1h-1zM18 20h1v1h-1zM19 20h1v1h-1zM20 20h1v1h-1zM21 20h1v1h-1zM22 20h1v1h-1zM0 21h1v1h-1zM2 21h1v1h-1zM3 21h1v1h-1zM4 21h1v1h-1zM6 21h1v1h-1zM9 21h1v1h-1zM11 21h1v1h-1zM14 21h1v1h-1zM15 21h1v1h-1zM16 21h1v1h-1zM18 21h1v1h-1zM19 21h1v1h-1zM22 21h1v1h-1zM23 21h1v1h-1zM24 21h1v1h-1zM0 22h1v1h-1zM2 22h1v1h-1zM3 22h1v1h-1zM4 22h1v1h-1zM6 22h1v1h-1zM9 22h1v1h-1zM11 22h1v1h-1zM12 22h1v1h-1zM13 22h1v1h-1zM14 22h1v1h-1zM17 22h1v1h-1zM18 22h1v1h-1zM21 22h1v1h-1zM23 22h1v1h-1zM0 23h1v1h-1zM6 23h1v1h-1zM9 23h1v1h-1zM15 23h1v1h-1zM18 23h1v1h-1zM19 23h1v1h-1zM20 23h1v1h-1zM21 23h1v1h-1zM22 23h1v1h-1zM23 23h1v1h-1zM0 24h1v1h-1zM1 24h1v1h-1zM2 24h1v1h-1zM3 24h1v1h-1zM4 24h1v1h-1zM5 24h1v1h-1zM6 24h1v1h-1zM8 24h1v1h-1zM9 24h1v1h-1zM12 24h1v1h-1zM15 24h1v1h-1zM22 24h1v1h-1zM23 24h1v1h-1zM24 24h1v1h-1z" fill="currentColor"/></svg>
+                            <small class="en">SCAN TO VISIT</small><small class="fr">SCANNEZ POUR VISITER</small>
+                        </a>
+                    </div>
+
+                    <div class="item">
+                        <div class="item-head">
+                            <h3>EcoWarriors <small class="en">· academic project</small><small class="fr">· projet académique</small></h3>
+                            <span class="date"><span class="en">Jan 2023 – Jun 2023</span><span class="fr">Jan. 2023 – Juin 2023</span></span>
+                        </div>
+                        <ul>
+                            <li class="en">Gamified platform blending social network and education to promote sustainable development. <b>Awarded “Best Project”.</b></li>
+                            <li class="fr">Plateforme gamifiée mêlant réseau social et éducation pour promouvoir le développement durable. <b>Primé « Meilleur Projet ».</b></li>
+                        </ul>
+                        <div class="tags"><span>React</span><span>Express</span><span>MongoDB</span><span>Leaflet</span><span>WebSockets</span></div>
+                    </div>
+                </section>
+
+                <section>
+                    <h2><span class="en">Experience</span><span class="fr">Expériences</span></h2>
+
+                    <div class="item">
+                        <div class="item-head">
+                            <h3>SQLI <small class="en">· Web Developer (permanent)</small><small class="fr">· Développeur Concepteur Web (CDI)</small></h3>
+                            <span class="date"><span class="en">Oct 2024 – Present</span><span class="fr">Oct. 2024 – Présent</span></span>
+                        </div>
+                        <p class="meta">Paris, France</p>
+                        <ul>
+                            <li class="en">Lead ongoing maintenance and optimisation for a major insurance client, bringing in AI-assisted workflows (AI agents, MCP skills) to shorten delivery times and automate code checks.</li>
+                            <li class="fr">Pilotage de la maintenance et de l'optimisation continue d'un projet d'assurance grand compte, en intégrant des flux assistés par IA (agents IA, skills MCP) pour réduire les délais de livraison et automatiser les vérifications de code.</li>
+                        </ul>
+                    </div>
+
+                    <div class="item">
+                        <div class="item-head">
+                            <h3>SQLI <small class="en">· Web Developer (internship)</small><small class="fr">· Développeur Concepteur Web (stage)</small></h3>
+                            <span class="date"><span class="en">Feb 2024 – Aug 2024</span><span class="fr">Fév. 2024 – Août 2024</span></span>
+                        </div>
+                        <p class="meta">Paris, France</p>
+                        <ul>
+                            <li class="en">Improved an open-source SQLI bundle for Ibexa and Symfony, with strict code-quality standards and automated tests.</li>
+                            <li class="fr">Amélioration d'un bundle SQLI open source pour Ibexa et Symfony, avec des standards stricts de qualité de code et des tests automatisés.</li>
+                            <li class="en">Built custom Shopware plugins meeting the complex requirements of an e-commerce client.</li>
+                            <li class="fr">Conception de plugins Shopware sur-mesure répondant aux exigences complexes d'un client e-commerce.</li>
+                        </ul>
+                    </div>
+
+                    <div class="item">
+                        <div class="item-head">
+                            <h3><span class="en">Tunisian National Olympic Committee</span><span class="fr">Comité National Olympique Tunisien</span> <small>· MERN</small></h3>
+                            <span class="date"><span class="en">Apr 2023 – Jul 2023</span><span class="fr">Avr. 2023 – Juil. 2023</span></span>
+                        </div>
+                        <ul>
+                            <li class="en">Delivered the mission-critical accreditation system for the African Beach Games: 3,500+ participants from 54 countries.</li>
+                            <li class="fr">Mise en œuvre du système d'accréditation critique des Jeux Africains de Plage : plus de 3 500 participants issus de 54 pays.</li>
+                        </ul>
+                    </div>
+
+                    <div class="item">
+                        <div class="item-head">
+                            <h3>Carolina Tunisian Group <small>· Laravel</small></h3>
+                            <span class="date"><span class="en">Jul 2022 – Sep 2022</span><span class="fr">Juil. 2022 – Sep. 2022</span></span>
+                        </div>
+                        <ul>
+                            <li class="en">Designed and built a high-traffic e-commerce platform end to end, optimising the purchase journey.</li>
+                            <li class="fr">Conception et développement complet d'une plateforme e-commerce à fort trafic, optimisant les parcours d'achat.</li>
+                        </ul>
+                    </div>
+
+                    <div class="item">
+                        <div class="item-head">
+                            <h3>Greenex <small>· Laravel</small></h3>
+                            <span class="date"><span class="en">Jan 2021 – Jun 2021</span><span class="fr">Jan. 2021 – Juin 2021</span></span>
+                        </div>
+                        <ul>
+                            <li class="en">ERP automating production-data entry, making the company's management tool faster and more flexible.</li>
+                            <li class="fr">ERP automatisant la saisie des facteurs de production, rendant l'outil de gestion plus flexible et réactif.</li>
+                        </ul>
+                    </div>
+
+                    <div class="item">
+                        <div class="item-head">
+                            <h3>Tunisair <small>· PHP</small></h3>
+                            <span class="date"><span class="en">Jan 2020 – Feb 2020</span><span class="fr">Jan. 2020 – Fév. 2020</span></span>
+                        </div>
+                        <ul>
+                            <li class="en">Statistics tool extracting and analysing data from complex B2B booking XML feeds.</li>
+                            <li class="fr">Outil statistique d'extraction et d'analyse de données issues de flux XML complexes de réservations B2B.</li>
+                        </ul>
+                    </div>
+                </section>
+            </main>
+
+            <aside>
+                <section>
+                    <h2><span class="en">Stack</span><span class="fr">Stack</span></h2>
+                    <div class="skill-group">
+                        <h4>Backend</h4>
+                        <div class="logos">
+                            <span><img src="assets/img/technology_logos/PHP.png" alt="">PHP</span>
+                            <span><img src="assets/img/technology_logos/Symfony.png" alt="">Symfony</span>
+                            <span><img src="assets/img/technology_logos/Laravel.png" alt="">Laravel</span>
+                            <span>Ibexa</span>
+                            <span><img src="assets/img/technology_logos/Express.png" alt="">Node / Express</span>
+                        </div>
+                    </div>
+                    <div class="skill-group">
+                        <h4>Frontend</h4>
+                        <div class="logos">
+                            <span><img src="assets/img/technology_logos/React.png" alt="">React</span>
+                            <span>Next.js</span>
+                            <span>Angular</span>
+                            <span><img src="assets/img/technology_logos/JavaScript.png" alt="">JavaScript</span>
+                        </div>
+                    </div>
+                    <div class="skill-group">
+                        <h4><span class="en">Data &amp; CMS</span><span class="fr">Données &amp; CMS</span></h4>
+                        <div class="logos">
+                            <span><img src="assets/img/technology_logos/MySQL.png" alt="">MySQL</span>
+                            <span><img src="assets/img/technology_logos/PostgreSQL.png" alt="">PostgreSQL</span>
+                            <span><img src="assets/img/technology_logos/MongoDB.png" alt="">MongoDB</span>
+                            <span>Shopware</span>
+                        </div>
+                    </div>
+                    <div class="skill-group">
+                        <h4><span class="en">DevOps, real-time &amp; AI</span><span class="fr">DevOps, temps réel &amp; IA</span></h4>
+                        <div class="logos">
+                            <span><img src="assets/img/technology_logos/Docker.png" alt="">Docker</span>
+                            <span><img src="assets/img/technology_logos/Git.png" alt="">Git</span>
+                            <span>CI/CD</span>
+                            <span>WebSockets</span>
+                            <span>LiveKit</span>
+                            <span><span class="en">AI agents</span><span class="fr">Agents IA</span></span>
+                        </div>
+                    </div>
+                </section>
+
+                <section>
+                    <h2><span class="en">Education</span><span class="fr">Formation</span></h2>
+                    <ol class="timeline">
+                        <li>
+                            <span class="yr">2023 – 2024</span>
+                            <b>ESEO · Vélizy</b>
+                            <small class="en">International exchange, Data Intelligence</small><small class="fr">Mobilité internationale, Data Intelligence</small>
+                        </li>
+                        <li>
+                            <span class="yr">2021 – 2024</span>
+                            <b>ESPRIT · Ariana</b>
+                            <small class="en">Engineering degree in Computer Science, Web Technologies</small><small class="fr">Diplôme d'ingénieur en informatique, Technologies Web</small>
+                        </li>
+                        <li>
+                            <span class="yr">2019 – 2021</span>
+                            <b>ISET · Radès</b>
+                            <small class="en">Applied bachelor's, Information Systems Development</small><small class="fr">Licence appliquée, Développement de Systèmes d'Information</small>
+                        </li>
+                    </ol>
+                </section>
+
+                <section>
+                    <h2>Certifications</h2>
+                    <ul class="plain">
+                        <li>OCI Generative AI Professional<small>Oracle · <span class="en">Oct.</span><span class="fr">Oct.</span> 2025</small></li>
+                        <li>Ibexa DXP 4.6 Advanced Developer<small>Ibexa · <span class="en">Dec.</span><span class="fr">Déc.</span> 2024</small></li>
+                        <li>Ibexa DXP 4.6 Developer<small>Ibexa · <span class="en">Mar.</span><span class="fr">Mars</span> 2024</small></li>
+                        <li>DevOps Pre-Requisite &amp; Docker<small>KodeKloud · <span class="en">Oct.</span><span class="fr">Oct.</span> 2023</small></li>
+                        <li>CCNA: Introduction to Networks<small>Cisco · <span class="en">May</span><span class="fr">Mai</span> 2022</small></li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h2><span class="en">Languages</span><span class="fr">Langues</span></h2>
+                    <div class="lang-bar"><span class="en">French · fluent, professional</span><span class="fr">Français · courant, professionnel</span><div><i style="width: 92%"></i></div></div>
+                    <div class="lang-bar"><span class="en">English · fluent, professional</span><span class="fr">Anglais · courant, professionnel</span><div><i style="width: 88%"></i></div></div>
+                </section>
+            </aside>
+        </div>
+
+        <footer>
+            <span>chakerkhachlek.github.io</span>
+        </footer>
+    </article>
+
+    <script>
+        (function () {
+            var params = new URLSearchParams(location.search);
+            var stored = null;
+            try { stored = localStorage.getItem('cv-lang'); } catch (e) { }
+            var lang = params.get('lang') || stored || ((navigator.language || '').slice(0, 2) === 'fr' ? 'fr' : 'en');
+
+            var buttons = document.querySelectorAll('[data-set-lang]');
+            function setLang(next) {
+                document.documentElement.lang = next;
+                document.title = next === 'fr' ? 'Chaker Khachlek — CV' : 'Chaker Khachlek — Résumé';
+                buttons.forEach(function (b) { b.setAttribute('aria-pressed', b.dataset.setLang === next); });
+                try { localStorage.setItem('cv-lang', next); } catch (e) { }
+            }
+            buttons.forEach(function (b) { b.addEventListener('click', function () { setLang(b.dataset.setLang); }); });
+            setLang(lang === 'fr' ? 'fr' : 'en');
+
+            // Type the prompt command on screen; print and PDF keep the static text.
+            var typed = document.getElementById('typed');
+            if (window.matchMedia('(prefers-reduced-motion: reduce)').matches || params.has('static')) return;
+            var text = typed.textContent, i = 0;
+            typed.textContent = '';
+            (function tick() {
+                typed.textContent = text.slice(0, ++i);
+                if (i < text.length) setTimeout(tick, 110);
+            })();
+        })();
+    </script>
+</body>
+
+</html>

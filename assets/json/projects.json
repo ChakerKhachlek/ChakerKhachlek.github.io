@@ -1,0 +1,279 @@
+[
+  {
+    "title": "Loasis (Oasis Plaza)",
+    "date": "2026",
+    "featured": true,
+    "tagline": "A real-time multiplayer virtual café in your browser, with voice chat at the tables.",
+    "img_link": "https://i.ibb.co/F47KWtpW/game1.png",
+    "description": "Loasis is a 100% solo-developed 2D interactive virtual café playable directly in the browser on PC, tablet and mobile, with no downloads required. Players walk around the café, pick a table, customize their avatar and play classic games together: Chkobba (the traditional Tunisian card game), Dame (Checkers), Chess and Ludo. It features table-side voice chat, global text chat and a soundboard, a friends system with online presence, and AI bots to fill empty seats. Under the hood it runs on a custom engine built with AI as an engineering multiplier, including in-game map and decoration editors, and a self-hosted real-time stack: a LiveKit server for voice alongside a custom WebSocket server for game events, deployed on a dedicated VPC with full security handling.",
+    "technologies": "Custom 2D Web Game Engine, WebSockets, LiveKit (self-hosted), WebRTC Voice Chat, Game AI Bots, Map & Decoration Editors, VPC Deployment",
+    "links": [
+      {
+        "label": "Play live",
+        "url": "https://www.playloasis.com"
+      },
+      {
+        "label": "Press coverage (TGTV)",
+        "url": "https://tgtv.tn/tunisian-game/oasis-plaza/"
+      }
+    ],
+    "screenshots": [
+      "https://i.ibb.co/yBpZLLMC/servers.png",
+      "https://i.ibb.co/LzXwzYs6/admin-map.png",
+      "https://i.ibb.co/GwryVs1/admin-npc-spawn.png",
+      "https://i.ibb.co/kgLD6cNF/chess.png",
+      "https://i.ibb.co/T3cSmGp/chess2.png",
+      "https://i.ibb.co/R4jrVnM0/chkobba.png",
+      "https://i.ibb.co/Xrzsqqqt/chkobba2.png",
+      "https://i.ibb.co/7xm2hvpt/daily-quests.png",
+      "https://i.ibb.co/4RWLrB0g/dame.png",
+      "https://i.ibb.co/vC4Rm6sD/dame2.png",
+      "https://i.ibb.co/FqnWY6jT/friends.png",
+      "https://i.ibb.co/F47KWtpW/game1.png",
+      "https://i.ibb.co/F49W0r9x/ludo.png",
+      "https://i.ibb.co/LXS7k7KC/ludo2.png",
+      "https://i.ibb.co/ymS1p8hk/out1.png",
+      "https://i.ibb.co/nMXcryHc/out2.png",
+      "https://i.ibb.co/RGPXtCXX/roulette.png"
+    ]
+  },
+  {
+    "title": "OpenPromptRegistry",
+    "date": "May 2025",
+    "featured": true,
+    "tagline": "Organise, version and share AI prompts in one place.",
+    "img_link": "https://i.ibb.co/Tx3nKwW7/image.png",
+    "description": "www.opregistry.com is a comprehensive platform for managing and sharing AI prompts. Features include prompt organization, versioning, and a collaborative environment for prompt engineers.",
+    "technologies": "Next.js, TypeScript, Bootstrap, Prisma, NextAuth.js",
+    "links": [
+      {
+        "label": "Visit opregistry.com",
+        "url": "https://www.opregistry.com"
+      }
+    ],
+    "screenshots": [
+      "https://i.ibb.co/tp4C8w9B/image.png",
+      "https://i.ibb.co/5xJVVxxV/image.png",
+      "https://i.ibb.co/7x9WJX1t/image.png",
+      "https://i.ibb.co/gM4XnGwv/image.png",
+      "https://i.ibb.co/hFHcFm7r/image.png",
+      "https://i.ibb.co/gL6zZf5Z/image.png",
+      "https://i.ibb.co/d08qn3rQ/image.png",
+      "https://i.ibb.co/BH3M8Vcj/image.png",
+      "https://i.ibb.co/Cpgd1Hb4/image.png",
+      "https://i.ibb.co/5gSm4mn7/image.png",
+      "https://i.ibb.co/Tx3nKwW7/image.png",
+      "https://i.ibb.co/h1FPBySk/image.png"
+    ]
+  },
+  {
+    "title": "QCM Generator",
+    "date": "2023",
+    "img_link": "https://i.ibb.co/18b8mzj/2.png",
+    "description": "The 'QCM Generator' is a React-based school project that uses the GPT-3.5 Turbo model to instantly create single-choice questions (SCQs) from user input. It streamlines exam preparation for students and provides teachers with a convenient assessment tool.",
+    "technologies": "React, GPT3, GPT3-Turbo Model, Text To Json Parsing",
+    "screenshots": [
+      "https://i.ibb.co/SXSv8kN/1.png",
+      "https://i.ibb.co/18b8mzj/2.png",
+      "https://i.ibb.co/C5B4C9X/3.png",
+      "https://i.ibb.co/89m0902/4.png",
+      "https://i.ibb.co/crdCZR8/5.png",
+      "https://i.ibb.co/6B88yKW/6.png"
+    ]
+  },
+  {
+    "title": "CS GO Market Analysis",
+    "date": "2023 - 2024",
+    "img_link": "https://i.ibb.co/K71zc6v/web3.png",
+    "description": "The objective of this project is to apply data analysis techniques to understand trends in the CS:GO skins market. This could involve examining price fluctuations, identifying the most popular skins, analyzing rarity, and other aspects relevant to players, collectors, and investors involved in the skins market.",
+    "technologies": "Talend, ETL, Power BI, React",
+    "screenshots": [
+      "https://i.ibb.co/QjHkgWV/dashboard1.png",
+      "https://i.ibb.co/SPmfNz0/dashboard2.png",
+      "https://i.ibb.co/1q9ngyh/dashboard3.png",
+      "https://i.ibb.co/yBCkprB/web1.png",
+      "https://i.ibb.co/q56Gd50/web2.png",
+      "https://i.ibb.co/K71zc6v/web3.png",
+      "https://i.ibb.co/zR7gbTX/web4.png"
+    ]
+  },
+  {
+    "title": "Accreditation platform",
+    "date": "Apr. 2023 - Jul. 2023",
+    "img_link": "https://i.ibb.co/CbzqMqS/Screenshot-1.jpg",
+    "description": "The implementation of an accreditation system played a crucial role in accrediting over 3500 participants from 54 African countries, significantly contributing to the success of the African Beach Games held in Hammamet. The participant registration process, spanning preliminary stages, long lists, short lists, arrivals, and departures, was meticulously executed. A pre-accreditation process, akin to obtaining a visa, was established for participants, ensuring a seamless entry experience. The system facilitated the generation of distinct printable badges for each participant based on their role. Additionally, it offered a comprehensive overview of all participants, equipped with export tools for efficient data management. This accreditation system not only streamlined participant logistics but also played a pivotal role in enhancing the overall organizational success of the event.",
+    "technologies": "React , Express, Node JS, MongoDB, Digital Ocean, Websockets, JWT",
+    "screenshots": [
+      "https://i.ibb.co/sWJ41WQ/Screenshot-2.jpg",
+      "https://i.ibb.co/2kZkM2g/Screenshot-3.jpg",
+      "https://i.ibb.co/D7NYSsT/Screenshot-4.jpg",
+      "https://i.ibb.co/nzkbf5Y/Screenshot-5.jpg",
+      "https://i.ibb.co/c2h3zhr/Screenshot-6.jpg",
+      "https://i.ibb.co/nCsqxxr/Screenshot-7.jpg",
+      "https://i.ibb.co/n71VQdX/Screenshot-8.jpg",
+      "https://i.ibb.co/KWYbMgb/Screenshot-9.jpg",
+      "https://i.ibb.co/LxmghGS/Screenshot-10.jpg",
+      "https://i.ibb.co/GVSscMd/Screenshot-21.jpg",
+      "https://i.ibb.co/C04r4fr/v-rification-partici.png",
+      "https://i.ibb.co/Zg4kzXz/add-cno.png",
+      "https://i.ibb.co/tZ3Q3s3/Screenshot-1.jpg"
+    ]
+  },
+  {
+    "title": "Ecowarriors",
+    "date": "Jan. 2023 - Jun. 2023",
+    "img_link": "https://i.ibb.co/9H8R6dG/stou-water-nature-clan-image-no-text-only-logo-color-1e90ff-979c121b-cbb3-4d78-8009-47de84ebca37.png",
+    "description": "The platform presents a gamified experience, introducing an innovative approach that seamlessly integrates social networks, gaming, and education, all while fostering environmental preservation and sustainable development. A module validates real-life quests completed by players, allowing the upload of videos or images as proof. The platform employs AI to generate avatars using the stable broadcast API. A dynamic system of experience points and rewards adapts based on the player's level, creating a personalized and evolving journey. Complementing this, a real-time chat module and notifications enhance user engagement. Furthermore, the platform introduces collectible cards, offering a tangible and rewarding aspect to the gaming experience. Players can level up, achieving milestone badges that unlock unique rewards, creating an immersive and motivating ecosystem for users.",
+    "technologies": "React , Express, Node JS, MongoDB, Digital Ocean, Websockets, JWT",
+    "screenshots": [
+      "https://i.ibb.co/K54V8jm/download-1.png",
+      "https://i.ibb.co/QQB0vHN/download-2.png",
+      "https://i.ibb.co/5WSXtjr/download-3.png",
+      "https://i.ibb.co/y56mdtP/download-4.png",
+      "https://i.ibb.co/sQbNvvP/download-5.png",
+      "https://i.ibb.co/VL55YCm/download-6.png",
+      "https://i.ibb.co/wYLHWkK/download-7.png",
+      "https://i.ibb.co/nmsZHS5/download-8.png",
+      "https://i.ibb.co/6nkdfTx/download-9.png",
+      "https://i.ibb.co/4p7KRfx/download-10.png",
+      "https://i.ibb.co/b57KycK/download-11.png",
+      "https://i.ibb.co/5KvDHgt/download-12.png",
+      "https://i.ibb.co/NpYL6kn/download-13.png",
+      "https://i.ibb.co/YDD4dK5/download-14.png",
+      "https://i.ibb.co/fCdt06y/download-15.png",
+      "https://i.ibb.co/0YbsfJ3/download-16.png",
+      "https://i.ibb.co/LxcvBvS/download-17.png",
+      "https://i.ibb.co/pwzfv2B/download-18.png",
+      "https://i.ibb.co/8sqPm8J/download-19.png",
+      "https://i.ibb.co/sVL4yNJ/download-20.png",
+      "https://i.ibb.co/wpVp8tP/download-21.png"
+    ]
+  },
+  {
+    "title": "Online heaven platform",
+    "date": "2020",
+    "img_link": "https://i.ibb.co/D4HXW0B/screencapture-localhost-8000-2020-12-30-18-10-33.png",
+    "description": "Online Heaven Platform represents a solution for the broadcasting of animated series, the sharing of publications, and the collection of information about video games. This platform is the answer to the needs of the community.",
+    "technologies": "Symfony, RAWG api, Angular 8, Heroku web apps, Bootstrap 4",
+    "screenshots": [
+      "https://i.ibb.co/zm7vB9G/screenshot-localhost-8000-stream-episode-35-1605124084049.png",
+      "https://i.ibb.co/2vxRpS9/screenshot-localhost-8000-stream-home-1605124009883.png",
+      "https://i.ibb.co/s6dtFSw/screenshot-localhost-8000-stream-home-1605124035727.png",
+      "https://i.ibb.co/JQxmJL0/screenshot-localhost-8000-stream-season-49-1605124075387.png",
+      "https://i.ibb.co/F6MRH3T/screenshot-localhost-8000-stream-serie-11-1605124058864.png",
+      "https://i.ibb.co/mtK9qYL/screenshot-localhost-8000-stream-serie-21-1605124068608.png",
+      "https://i.ibb.co/TPGMnX0/screencapture-localhost-8000-forum-home-2020-12-30-18-29-50.png",
+      "https://i.ibb.co/xG6v579/screencapture-localhost-8000-forum-profile-1-edit-interest-2020-12-30-18-30-29.png",
+      "https://i.ibb.co/DRq0Kf3/screenshot-localhost-8000-stream-category-1-1605124045973.png"
+    ]
+  },
+  {
+    "title": "Mobile streaming app",
+    "date": "2020",
+    "img_link": "https://i.ibb.co/4KC8CdJ/133982795-387737119195967-6724531398676094254-n-Copy.jpg",
+    "description": "This a school project, a mobile application accessible from devices under the Android operating system, mainly used for watching anime movies.",
+    "technologies": "Java, Native android, Laravel backend, Restful Api's, Microsoft Azure, Android Studio IDE",
+    "screenshots": [
+      "https://i.ibb.co/XbBpkYk/133982795-387737119195967-6724531398676094254-n.jpg",
+      "https://i.ibb.co/5nZhsjB/134049776-167017288536744-1717798741101709199-n.jpg",
+      "https://i.ibb.co/Srqgr5y/134086003-1005642426592326-2987278376221650227-n.jpg",
+      "https://i.ibb.co/bmqdtSM/134524201-230706968495653-925191202639306254-n.jpg",
+      "https://i.ibb.co/m930CBL/133900141-399488811271254-7811595447123570470-n.jpg",
+      "https://i.ibb.co/LRHhGjL/133920249-416624443109720-2784315339387866274-n.jpg",
+      "https://i.ibb.co/H2MPtRh/133967586-441047980598041-7774539905969152358-n.jpg",
+      "https://i.ibb.co/jDNx7fV/134053430-2952470431652421-1233363089219201009-n.jpg",
+      "https://i.ibb.co/cLDwpjY/Back-Office.png",
+      "https://i.ibb.co/c2fW23r/Azure.png"
+    ]
+  },
+  {
+    "title": "Greenex ERP",
+    "date": "Jan. 2021 - Jun. 2021",
+    "img_link": "https://i.ibb.co/r3Tfb9F/Dashboard.png",
+    "description": "My end of bachelor project, a web application coded with Laravel and Livewire Framework, the purpose of this app is to help the company to manage its orders, clients, workforces, and invoices.",
+    "technologies": "Laravel, Livewire Framework, Bootstrap 4, Heroku web apps,Chart JS, MVC Architecture",
+    "screenshots": [
+      "https://i.ibb.co/ZSFmNbQ/screencapture-localhost-8000-dashboard-orders-management-2021-04-23-08-43-33.png",
+      "https://i.ibb.co/6WX7fSP/screencapture-localhost-8000-dashboard-workforces-management-2021-04-23-08-41-31.png",
+      "https://i.ibb.co/pRtKbCS/screencapture-localhost-8000-fullcalender-2021-04-23-08-43-08.png",
+      "https://i.ibb.co/QDCRynn/screencapture-outlook-live-mail-0-id-AQQk-ADAw-ATY3-Zm-YAZS1j-ODU1-AC1k-NTBk-LTAw-Ai0w-MAo-AEABGC6s.png",
+      "https://i.ibb.co/gvB6vVK/screencapture-outlook-live-mail-0-inbox-id-AQQk-ADAw-ATY3-Zm-YAZS1j-ODU1-AC1k-NTBk-LTAw-Ai0w-MAo-AEA.png",
+      "https://i.ibb.co/r3Tfb9F/Dashboard.png",
+      "https://i.ibb.co/GWfvCHV/orders.png",
+      "https://i.ibb.co/bQsqVrV/screencapture-localhost-8000-dashboard-clients-management-2021-04-23-08-43-24.png",
+      "https://i.ibb.co/Jj7gnM8/screencapture-localhost-8000-dashboard-geolocalisation-2021-04-23-08-41-56.png",
+      "https://i.ibb.co/SBPYPpW/Client-space-orders.png",
+      "https://i.ibb.co/4Pmxt51/invoice.png",
+      "https://i.ibb.co/SNX3pcj/Dashboard.png"
+    ]
+  },
+  {
+    "title": "Spirit of life",
+    "date": "2021",
+    "img_link": "https://i.ibb.co/z6Rxcv4/spirit-of-life-head.png",
+    "description": "Spirit of Life is a dynamic web application meticulously crafted with Laravel and Laravel Livewire, designed specifically for association needs. This bespoke digital solution encapsulates a seamless blend of cutting-edge technology and purposeful design, empowering associations with a robust online presence and intuitive functionality.",
+    "technologies": "Laravel, Livewire Framework, Bootstrap 4, Heroku web apps, MVC Architecture",
+    "screenshots": [
+      "https://i.ibb.co/80gQwVk/spiritoflife-dashboard.png",
+      "https://i.ibb.co/H73pzPH/Inkedspirit-of-life-herokuapp-manage-products-2022-04-08-04-54-35-LI.jpg",
+      "https://i.ibb.co/2jqqRXp/Inkedspirit-of-life-herokuapp-manage-members-2022-04-08-04-55-03-LI.jpg",
+      "https://i.ibb.co/pPNfgw1/spiritoflife-full.png"
+    ]
+  },
+  {
+    "title": "Vr help",
+    "date": "2022",
+    "img_link": "https://i.ibb.co/x7WjzRQ/making-off2.png",
+    "description": "A school project, 3D virtual reality application for the purpose of helping people to express their feelings and emotions in a virtual world.",
+    "technologies": "Unity 3D, Vr Chat, C#",
+    "screenshots": [
+      "https://i.ibb.co/C2gtQ9p/couloir.png",
+      "https://i.ibb.co/tZXhk8Y/character.png",
+      "https://i.ibb.co/c1v84NG/ff-3.png",
+      "https://i.ibb.co/x7WjzRQ/making-off2.png",
+      "https://i.ibb.co/hyQTRz2/making-off3.png",
+      "https://i.ibb.co/0Qd2fZ5/making-off4.png",
+      "https://i.ibb.co/G2pf4f9/MAKINGOFF-1.png",
+      "https://i.ibb.co/hCGcFrD/mirror.png",
+      "https://i.ibb.co/cXbhB9c/picture.png",
+      "https://i.ibb.co/QJ0jBQc/quotes.png",
+      "https://i.ibb.co/qmsCy68/views.png"
+    ]
+  },
+  {
+    "title": "Social network app",
+    "date": "2022",
+    "img_link": "https://i.ibb.co/Mf1vjpM/login.png",
+    "description": "A school project, android app coded with Java and Codenameone framework, the purpose of this app is to help people to connect with each other and share their feelings and emotions.",
+    "technologies": "Java, Codenameone framework, Restful Api's, Netbeans IDE",
+    "screenshots": [
+      "https://i.ibb.co/SBSkkCh/profile2.png",
+      "https://i.ibb.co/0DYV8Wk/register.png",
+      "https://i.ibb.co/S3scLxq/sidemenu.png",
+      "https://i.ibb.co/qkTPSPw/timeline.png",
+      "https://i.ibb.co/ZJ5t18w/walkthrough.png",
+      "https://i.ibb.co/rGxN13v/chat.png",
+      "https://i.ibb.co/Ks3fjjJ/edit-profile.png",
+      "https://i.ibb.co/Mf1vjpM/login.png",
+      "https://i.ibb.co/2SmxcFj/my-connections.png",
+      "https://i.ibb.co/BZ6wSGK/other-profile2.png",
+      "https://i.ibb.co/7GyHdCV/other-profile.png",
+      "https://i.ibb.co/44Yg5c7/profile1.png",
+      "https://i.ibb.co/h1dkHGs/head-socialcodenameone.png"
+    ]
+  },
+  {
+    "title": "BMI calculator",
+    "date": "2020",
+    "img_link": "https://i.ibb.co/j68w1q0/bmihead.jpg",
+    "description": "A personal project, mobile app coded with Dart and Fultter Framework, the purpose of this app is to calculate the body mass index of a person.",
+    "technologies": "Dart, Flutter Framework, Android Studio IDE",
+    "screenshots": [
+      "https://i.ibb.co/MVNL26s/bmi-female1.jpg",
+      "https://i.ibb.co/9w8h7sh/bmi-female2.jpg",
+      "https://i.ibb.co/5Mnyr8m/bmi-man1.jpg",
+      "https://i.ibb.co/mDk15SV/bmi-man2.jpg",
+      "https://i.ibb.co/hW8DW0Z/bmihead.jpg"
+    ]
+  }
+]

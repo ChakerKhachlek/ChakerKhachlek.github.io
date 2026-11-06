@@ -1,0 +1,180 @@
+{
+    "title": "PHP Complete Course Cheat Sheet",
+    "modules": [
+        {
+            "title": "1. PHP Basics",
+            "lessons": [
+                {
+                    "title": "Introduction to PHP",
+                    "note": "PHP is a popular server-side scripting language designed for web development.",
+                    "code": "<?php\n// Your first PHP code\n?>"
+                },
+                {
+                    "title": "Echo & Print",
+                    "note": "Outputs text or variables to the browser. `echo` is faster and more commonly used.",
+                    "code": "<?php\necho \"Hello, World!\";\nprint \"Hello again!\";\n?>"
+                },
+                {
+                    "title": "Variables & Data Types",
+                    "note": "PHP supports strings, integers, floats, booleans, arrays, objects, NULL, and resources.",
+                    "code": "<?php\n$name = \"Alice\";\n$age = 30;\n$loggedIn = true;\n$score = 99.5;\n$items = [1, 2, 3];\n$nothing = null;\n?>"
+                },
+                {
+                    "title": "Comments",
+                    "note": "Single-line and multi-line comments.",
+                    "code": "<?php\n// Single-line comment\n# Another single-line\n/*\n  Multi-line\n  comment\n*/\n?>"
+                }
+            ]
+        },
+        {
+            "title": "2. Control Structures",
+            "lessons": [
+                {
+                    "title": "If / Else",
+                    "note": "Basic conditional statements.",
+                    "code": "<?php\nif ($age >= 18) {\n  echo \"Adult\";\n} else {\n  echo \"Minor\";\n}\n?>"
+                },
+                {
+                    "title": "Switch Statement",
+                    "note": "Select one of many blocks to execute.",
+                    "code": "<?php\nswitch ($status) {\n  case 'active':\n    echo 'Active';\n    break;\n  case 'inactive':\n    echo 'Inactive';\n    break;\n  default:\n    echo 'Unknown';\n}\n?>"
+                },
+                {
+                    "title": "Loops: for, while, do...while, foreach",
+                    "note": "Iterate over code blocks.",
+                    "code": "<?php\n// For loop\nfor ($i = 0; $i < 5; $i++) {\n  echo $i;\n}\n\n// While loop\nwhile ($x < 10) {\n  $x++;\n}\n\n// Do...while loop\ndo {\n  $x--;\n} while ($x > 0);\n\n// Foreach loop for arrays\nforeach ($items as $item) {\n  echo $item;\n}\n?>"
+                }
+            ]
+        },
+        {
+            "title": "3. Functions",
+            "lessons": [
+                {
+                    "title": "Defining & Calling Functions",
+                    "note": "Reusable blocks of code.",
+                    "code": "<?php\nfunction greet($name) {\n  return \"Hello, $name!\";\n}\necho greet('Alice');\n?>"
+                },
+                {
+                    "title": "Function Parameters & Defaults",
+                    "note": "Parameters can have default values.",
+                    "code": "<?php\nfunction add($a, $b = 10) {\n  return $a + $b;\n}\necho add(5); // Outputs 15\n?>"
+                },
+                {
+                    "title": "Type Declarations (PHP 7+)",
+                    "note": "Scalar types and return types enforce data types.",
+                    "code": "<?php\nfunction add(int $a, int $b): int {\n  return $a + $b;\n}\necho add(5, 10);\n?>"
+                },
+                {
+                    "title": "Anonymous Functions & Closures",
+                    "note": "Functions without names, useful for callbacks.",
+                    "code": "<?php\n$sum = function($a, $b) {\n  return $a + $b;\n};\necho $sum(3, 4);\n?>"
+                }
+            ]
+        },
+        {
+            "title": "4. Arrays & Array Functions",
+            "lessons": [
+                {
+                    "title": "Indexed Arrays",
+                    "note": "Arrays with numeric keys.",
+                    "code": "<?php\n$fruits = ['Apple', 'Banana', 'Cherry'];\necho $fruits[1]; // Banana\n?>"
+                },
+                {
+                    "title": "Associative Arrays",
+                    "note": "Arrays with named keys.",
+                    "code": "<?php\n$user = [\n  'name' => 'Alice',\n  'age' => 30\n];\necho $user['name'];\n?>"
+                },
+                {
+                    "title": "Common Array Functions",
+                    "note": "Useful for manipulating arrays.",
+                    "code": "<?php\ncount($fruits); // Number of elements\narray_push($fruits, 'Date');\narray_merge($arr1, $arr2);\narray_keys($user);\narray_values($user);\n?>"
+                }
+            ]
+        },
+        {
+            "title": "5. Object-Oriented PHP",
+            "lessons": [
+                {
+                    "title": "Classes and Objects",
+                    "note": "Basic OOP in PHP.",
+                    "code": "<?php\nclass User {\n  public $name;\n  public function __construct($name) {\n    $this->name = $name;\n  }\n  public function greet() {\n    return \"Hello, \" . $this->name;\n  }\n}\n$user = new User('Alice');\necho $user->greet();\n?>"
+                },
+                {
+                    "title": "Visibility: public, private, protected",
+                    "note": "Control access to properties/methods.",
+                    "code": "<?php\nclass User {\n  private $password;\n  public function setPassword($pwd) {\n    $this->password = $pwd;\n  }\n}\n?>"
+                },
+                {
+                    "title": "Inheritance",
+                    "note": "Child class inherits parent class.",
+                    "code": "<?php\nclass Admin extends User {\n  public function isAdmin() {\n    return true;\n  }\n}\n?>"
+                }
+            ]
+        },
+        {
+            "title": "6. PHP 8 New Features",
+            "lessons": [
+                {
+                    "title": "Match Expression",
+                    "note": "A cleaner alternative to switch.",
+                    "code": "<?php\n$result = match($status) {\n  'active' => 'Active',\n  'inactive' => 'Inactive',\n  default => 'Unknown'\n};\n?>"
+                },
+                {
+                    "title": "Constructor Property Promotion",
+                    "note": "Define and assign properties in the constructor.",
+                    "code": "<?php\nclass User {\n  public function __construct(\n    private string $name,\n    private int $age\n  ) {}\n}\n?>"
+                },
+                {
+                    "title": "Nullsafe Operator",
+                    "note": "Simplifies null checks.",
+                    "code": "<?php\n$username = $user?->profile?->username;\n?>"
+                },
+                {
+                    "title": "Named Arguments",
+                    "note": "Pass arguments by name instead of position.",
+                    "code": "<?php\nfunction createUser($name, $age, $role) {}\ncreateUser(age: 30, name: 'Alice', role: 'admin');\n?>"
+                },
+                {
+                    "title": "Union Types",
+                    "note": "Allow multiple types for parameters and return values.",
+                    "code": "<?php\nfunction foo(int|string $param): int|string {\n  return $param;\n}\n?>"
+                },
+                {
+                    "title": "Attributes (Annotations)",
+                    "note": "Metadata for classes and functions.",
+                    "code": "<?php\n#[Attribute]\nclass Example {}\n\n#[Example]\nclass MyClass {}\n?>"
+                }
+            ]
+        },
+        {
+            "title": "7. Common PHP Functions & Tips",
+            "lessons": [
+                {
+                    "title": "String Functions",
+                    "note": "Manipulate strings easily.",
+                    "code": "<?php\nstrlen('hello');\nstrtoupper('hello');\nsubstr('hello', 1, 3);\nstrpos('hello world', 'world');\n?>"
+                },
+                {
+                    "title": "Date & Time",
+                    "note": "Working with dates and times.",
+                    "code": "<?php\necho date('Y-m-d H:i:s');\n$timestamp = strtotime('next Monday');\n?>"
+                },
+                {
+                    "title": "Error Handling",
+                    "note": "Try-catch blocks to handle exceptions.",
+                    "code": "<?php\ntry {\n  // code that might throw\n} catch (Exception $e) {\n  echo $e->getMessage();\n}\n?>"
+                },
+                {
+                    "title": "Superglobals",
+                    "note": "Built-in variables accessible anywhere in your script.",
+                    "code": "<?php\n// Common superglobals\n$_GET; // URL parameters\n$_POST; // Form data\n$_SESSION; // Session variables\n$_COOKIE; // Cookies\n$_SERVER; // Server info\n?>"
+                },
+                {
+                    "title": "Best Practices",
+                    "note": "Use strict types, error reporting, and follow coding standards.",
+                    "code": "<?php\ndeclare(strict_types=1);\nerror_reporting(E_ALL);\nini_set('display_errors', '1');\n// Follow PSR standards\n?>"
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,120 @@
+{
+  "title": "Docker Complete Cheat Sheet",
+  "modules": [
+    {
+      "title": "1. Docker Basics",
+      "lessons": [
+        {
+          "title": "Check Docker Version",
+          "note": "Verify Docker installation.",
+          "code": "docker --version\ndocker version"
+        },
+        {
+          "title": "Info & System",
+          "note": "Detailed info about Docker setup.",
+          "code": "docker info"
+        }
+      ]
+    },
+    {
+      "title": "2. Images",
+      "lessons": [
+        {
+          "title": "List Images",
+          "note": "Show all downloaded images.",
+          "code": "docker images\ndocker image ls"
+        },
+        {
+          "title": "Pull Image",
+          "note": "Download an image from Docker Hub.",
+          "code": "docker pull ubuntu:latest"
+        },
+        {
+          "title": "Remove Image",
+          "note": "Delete an image locally.",
+          "code": "docker rmi <image-id>"
+        }
+      ]
+    },
+    {
+      "title": "3. Containers",
+      "lessons": [
+        {
+          "title": "Run Container",
+          "note": "Start a container interactively.",
+          "code": "docker run -it ubuntu /bin/bash"
+        },
+        {
+          "title": "List Containers",
+          "note": "See running and all containers.",
+          "code": "docker ps\ndocker ps -a"
+        },
+        {
+          "title": "Stop & Remove",
+          "note": "Stop and remove containers.",
+          "code": "docker stop <container-id>\ndocker rm <container-id>"
+        }
+      ]
+    },
+    {
+      "title": "4. Docker Compose",
+      "lessons": [
+        {
+          "title": "Start Services",
+          "note": "Run services defined in docker-compose.yml",
+          "code": "docker-compose up -d"
+        },
+        {
+          "title": "Stop Services",
+          "note": "Stop all running services",
+          "code": "docker-compose down"
+        },
+        {
+          "title": "View Logs",
+          "note": "Check logs of services",
+          "code": "docker-compose logs\n"
+        }
+      ]
+    },
+    {
+      "title": "5. Volumes & Networks",
+      "lessons": [
+        {
+          "title": "List Volumes",
+          "note": "Show existing volumes",
+          "code": "docker volume ls"
+        },
+        {
+          "title": "Create Volume",
+          "note": "Create new volume",
+          "code": "docker volume create myvolume"
+        },
+        {
+          "title": "List Networks",
+          "note": "Show Docker networks",
+          "code": "docker network ls"
+        }
+      ]
+    },
+    {
+      "title": "6. Misc Commands",
+      "lessons": [
+        {
+          "title": "Exec into Container",
+          "note": "Run commands inside a running container",
+          "code": "docker exec -it <container-id> /bin/bash"
+        },
+        {
+          "title": "Copy Files",
+          "note": "Copy files between host and container",
+          "code": "docker cp hostfile.txt <container-id>:/path/in/container"
+        },
+        {
+          "title": "Remove All Stopped Containers",
+          "note": "Clean up unused containers",
+          "code": "docker container prune"
+        }
+      ]
+    }
+  ]
+}

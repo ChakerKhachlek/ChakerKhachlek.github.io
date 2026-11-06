@@ -12,28 +12,710 @@
         gtag('config', 'G-8K4Z6ZJ7WC');
     </script>
     <meta charset="utf-8">
-    <title>Chaker Khachlek — Portfolio</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Portfolio of Chaker Khachlek, backend software engineer and web developer in Paris.">
-    <!-- The portfolio lives in the CKPortfolio repository; send visitors and search engines there. -->
-    <link rel="canonical" href="https://chakerkhachlek.github.io/CKPortfolio/">
-    <!-- Site icon (Google Search shows the icon declared on this root page) -->
-    <link rel="icon" href="/favicon.ico" sizes="any">
-    <link rel="icon" href="/favicon-48.png" type="image/png" sizes="48x48">
-    <link rel="icon" href="/favicon-192.png" type="image/png" sizes="192x192">
-    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+    <!-- Page title and search engine metadata -->
+    <title>Chaker Khachlek — Backend Software Engineer &amp; Web Developer</title>
+    <meta name="description" content="Chaker Khachlek, backend software engineer and web developer in Paris. Creator of Loasis, a real-time multiplayer browser game, and Open Prompt Registry.">
+    <link rel="canonical" href="https://chakerkhachlek.github.io/">
     <!-- Google Search Console ownership verification -->
     <meta name="google-site-verification" content="ukk4rxXargMLmhO9NlWvoXMoPmler_AwsGEo8B7ZqeU">
-    <meta http-equiv="refresh" content="0; url=https://chakerkhachlek.github.io/CKPortfolio/">
-    <script>location.replace('https://chakerkhachlek.github.io/CKPortfolio/' + location.search + location.hash);</script>
-    <style>
-        body { margin: 0; min-height: 100vh; display: grid; place-items: center; background: #121212; color: #e5e7eb; font-family: ui-monospace, monospace; }
-        a { color: #4ade80; }
-    </style>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Link previews (LinkedIn, WhatsApp, X...) -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://chakerkhachlek.github.io/">
+    <meta property="og:title" content="Chaker Khachlek — Backend Software Engineer &amp; Web Developer">
+    <meta property="og:description" content="Chaker Khachlek, backend software engineer and web developer in Paris. Creator of Loasis, a real-time multiplayer browser game, and Open Prompt Registry.">
+    <meta property="og:image" content="https://chakerkhachlek.github.io/assets/img/photo_portfolio.png">
+    <meta name="twitter:card" content="summary">
+    <!-- Tells Google this is the personal site of a person, linked to their profiles -->
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Chaker Khachlek",
+  "jobTitle": "Backend Software Engineer",
+  "url": "https://chakerkhachlek.github.io/",
+  "image": "https://chakerkhachlek.github.io/assets/img/photo_portfolio.png",
+  "email": "mailto:chaker.khachlek@gmail.com",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Paris",
+    "addressCountry": "FR"
+  },
+  "sameAs": [
+    "https://www.linkedin.com/in/chaker-khachlek/",
+    "https://github.com/ChakerKhachlek"
+  ],
+  "knowsAbout": [
+    "PHP",
+    "Symfony",
+    "Laravel",
+    "React",
+    "Node.js",
+    "WebSockets",
+    "LiveKit"
+  ]
+}
+    </script>
+    <!-- Page icon -->
+    <link rel="icon" href="assets/img/icons/favicon.ico" sizes="any">
+    <link rel="icon" href="assets/img/icons/favicon-48.png" type="image/png" sizes="48x48">
+    <link rel="icon" href="assets/img/icons/favicon-192.png" type="image/png" sizes="192x192">
+    <link rel="apple-touch-icon" href="assets/img/icons/apple-touch-icon.png">
+    <!-- Link to Fira Code font -->
+    <link href="https://fonts.googleapis.com/css?family=Fira Code" rel="stylesheet">
+    <!-- Main CSS Link -->
+    <!-- Bump ?v= whenever style.css changes so browsers fetch the new file instead of a cached one -->
+    <link rel="stylesheet" media="screen" href="css/style.css?v=2026-10-17b">
+    <!-- Bootstrap 5 CSS Link -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <!-- Bootstrap 5 ICONS Link -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <!-- Include jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <!-- Include Ripples.js -->
+    <script src="https://cdn.jsdelivr.net/npm/jquery.ripples@0.6.3/dist/jquery.ripples-min.js"></script>
+    <!-- Include Alpine.js -->
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.13.2/dist/cdn.min.js"></script>
 </head>
 
 <body>
-    <p>Redirecting to <a href="https://chakerkhachlek.github.io/CKPortfolio/">Chaker Khachlek's portfolio</a>…</p>
+
+    <!-- Navbar Start -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top site-nav" id="siteNav">
+        <div class="container-fluid">
+            <a class="navbar-brand site-brand" href="#">
+                <img src="assets/img/logo.jpeg" alt="" width="32" height="32">
+                <span>Chaker Khachlek<b>.</b></span>
+            </a>
+            <button class="navbar-toggler site-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span></span><span></span><span></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mx-auto site-links">
+                    <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#technologies">Technologies</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+                </ul>
+                <div class="site-nav-actions">
+                    <label class="ripple-toggle" title="Water ripple effect">
+                        <input type="checkbox" id="rippleToggle">
+                        <span class="ripple-toggle-track"><span></span></span>
+                        <span class="ripple-toggle-label">Ripple</span>
+                    </label>
+                    <a class="site-nav-cta" href="cv.html">View CV</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <!-- Navbar End -->
+
+    <!-- Main Section Start -->
+    <div id="particles-js" style="position: relative">
+        <div class="hero position-absolute top-50 start-50 translate-middle">
+            <p class="hero-prompt">chaker@paris:~$ whoami</p>
+            <h1 class="hero-name">Chaker Khachlek<span>.</span></h1>
+            <p class="hero-role">Backend Software Engineer · Web Developer</p>
+            <p class="hero-intro">I build web platforms and ship my own products, from real-time games to AI tools.</p>
+            <div class="hero-actions">
+                <a class="hero-btn hero-btn-primary" href="https://www.opregistry.com" target="_blank" rel="noopener">Open Prompt Registry</a>
+                <a class="hero-btn" href="cv.html">View CV</a>
+                <a class="hero-btn" href="#contact">Contact</a>
+            </div>
+        </div>
+    </div>
+    <!-- Main Section End -->
+
+    <div class="section-separator"></div>
+
+    <!-- About Section Start -->
+    <div class="section d-flex align-items-center" id="about">
+        <div class="polygons"></div>
+        <div class="container">
+            <div class="row d-flex align-items-center justify-content-center text-nowrap text-center text-light mb-5">
+                <div class="col"></div>
+                <div class="col">
+                    <img class="icon img-fluid" src="assets/img/avatar.png" width="150px" />
+                </div>
+                <div class="col"></div>
+            </div>
+            <div class="row d-flex align-items-center justify-content-center text-nowrap text-center text-light mb-5">
+                <div class="col"></div>
+                <div class="col">
+                    <h2 class="animated-heading">About me</h2>
+                </div>
+                <div class="col"></div>
+            </div>
+            <div class="about-grid">
+                <div class="about-photo">
+                    <img src="assets/img/photo_portfolio.png" alt="Chaker Khachlek" loading="lazy">
+                    <span class="about-status"><i></i> Based in Paris</span>
+                </div>
+                <div class="about-content">
+                    <p class="about-lead">Computer engineer specialised in web technologies.</p>
+                    <p class="about-text">
+                        I work as a web developer at SQLI in Paris on PHP, Symfony, Ibexa and Shopware projects, with
+                        AI agents built into how I deliver. On the side I ship my own products: Loasis, a real-time
+                        multiplayer café game playable in the browser, and Open Prompt Registry, a platform for
+                        managing AI prompts.
+                    </p>
+                    <div class="about-stats">
+                        <div><strong>6+</strong><span>years building for the web</span></div>
+                        <div><strong>3,500+</strong><span>participants accredited on a platform I built</span></div>
+                        <div><strong>2</strong><span>live products I built and run</span></div>
+                    </div>
+                    <div class="about-actions">
+                        <a class="hero-btn hero-btn-primary" href="cv.html">View CV</a>
+                        <a class="hero-btn" href="assets/pdf/chaker_khachlek_cv_eng.pdf" download>Download (EN)</a>
+                        <a class="hero-btn" href="assets/pdf/chaker_khachlek_cv_fr.pdf" download>Télécharger (FR)</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- About Section End -->
+
+    <div class="section-separator"></div>
+
+    <!-- Technologies Section Start -->
+    <div class="section d-flex align-items-center" id="technologies">
+        <div class="polygons"></div>
+        <div class="container">
+            <div class="row d-flex align-items-center justify-content-center text-nowrap text-center text-light mb-5">
+                <div class="col"></div>
+                <div class="col">
+                    <img class="icon img-fluid mt-5" src="assets/img/skills.png" width="150px" />
+                </div>
+                <div class="col"></div>
+            </div>
+            <div class="row d-flex align-items-center justify-content-center text-nowrap text-center text-light mb-5">
+                <div class="col"></div>
+                <div class="col">
+                    <h2 class="animated-heading">Technologies</h2>
+                </div>
+                <div class="col"></div>
+            </div>
+            <blockquote class="blockquote-sm text-center text-light mb-5">
+                &ldquo; You can't grasp all knowledge. In fact, it's not about what you know; it's about what you can
+                figure out. &rdquo;
+            </blockquote>
+
+            <div class="mb-3" x-data="{ technologies: [], filter: 'All' }" x-init="fetch('assets/json/technologies.json')
+       .then(response => response.json())
+       .then(data => technologies = data)">
+                <div class="tech-filters" role="tablist" aria-label="Filter technologies" x-show="technologies.length > 0">
+                    <template x-for="cat in ['All', ...new Set(technologies.map(t => t.category))]" :key="cat">
+                        <button type="button" role="tab" :aria-selected="filter === cat"
+                            :class="{ active: filter === cat }" @click="filter = cat" x-text="cat"></button>
+                    </template>
+                </div>
+                <div class="tech-grid">
+                    <template x-for="technology in technologies.filter(t => filter === 'All' || t.category === filter)"
+                        :key="technology.title">
+                        <div class="tech-card">
+                            <div class="tech-card-logo">
+                                <img :src="technology.img_logo" :alt="technology.title + ' logo'" loading="lazy">
+                            </div>
+                            <div class="tech-card-info">
+                                <div class="tech-card-head">
+                                    <span class="tech-card-title" x-text="technology.title"></span>
+                                    <span class="tech-card-pct" x-text="technology.percentage + '%'"></span>
+                                </div>
+                                <div class="tech-card-bar" role="meter" aria-valuemin="0" aria-valuemax="100"
+                                    :aria-valuenow="technology.percentage" :aria-label="technology.title + ' proficiency'">
+                                    <i :style="'width:' + technology.percentage + '%'"></i>
+                                </div>
+                                <template x-if="technology.cheatSheetLink">
+                                    <a class="tech-card-link" :href="technology.cheatSheetLink" target="_blank">Cheat sheet ↗</a>
+                                </template>
+                            </div>
+                        </div>
+                    </template>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <!-- Technologies Section End -->
+
+    <div class="section-separator"></div>
+
+    <!-- Projects Section Start -->
+    <div class="section d-flex align-items-center" id="projects">
+        <div class="polygons"></div>
+        <div class="container">
+            <div class="row d-flex align-items-center justify-content-center text-nowrap text-center text-light my-5">
+                <div class="col"></div>
+                <div class="col">
+                    <div class="col">
+                        <img class="icon img-fluid" src="assets/img/projects.png" width="150px" />
+                    </div>
+                </div>
+                <div class="col"></div>
+            </div>
+            <div class="row d-flex align-items-center justify-content-center text-nowrap text-center text-light mb-5">
+                <div class="col"></div>
+                <div class="col">
+                    <h2 class="animated-heading">Projects</h2>
+                </div>
+                <div class="col"></div>
+            </div>
+            <blockquote class="blockquote-sm text-center text-light mb-5">
+                &ldquo; Things I've built and shipped. &rdquo;
+            </blockquote>
+            <div x-data="{ projects: [], showModal: false, currentProject: null,
+                // Sort key from the end of the date: year, then month when given ('Jul. 2023' > '2023').
+                dateKey(p) {
+                    const d = p.date || '';
+                    const years = d.match(/\d{4}/g) || ['0'];
+                    const month = d.match(/([A-Za-z]{3})[a-z]*\.?\s+\d{4}\s*$/);
+                    const index = month ? 'janfebmaraprmayjunjulaugsepoctnovdec'.indexOf(month[1].toLowerCase()) / 3 + 1 : 0;
+                    return Number(years[years.length - 1]) * 13 + index;
+                },
+                byDate(list) { return [...list].sort((a, b) => this.dateKey(b) - this.dateKey(a)); }
+            }" x-init="() => {
+                fetch('assets/json/projects.json')
+                    .then(response => response.json())
+                    .then(data => projects = data);
+            }">
+
+                <div class="container">
+                    <!-- Featured projects -->
+                    <div class="row g-4 mb-4">
+                        <template x-for="project in byDate(projects.filter(p => p.featured))" :key="project.title">
+                            <div class="col-lg-6">
+                                <div class="project-card project-card-featured" role="button" tabindex="0"
+                                    @click="currentProject = project; showModal = true; bootstrap.Modal.getOrCreateInstance('#exampleModal').show();"
+                                    @keydown.enter="$el.click()">
+                                    <div class="project-media">
+                                        <img :src="project.img_link" :alt="project.title" loading="lazy">
+                                        <span class="project-badge">★ Featured</span>
+                                        <span class="project-year" x-show="project.date"
+                                            x-text="(project.date.match(/\d{4}/g) || []).pop()"></span>
+                                    </div>
+                                    <div class="project-body">
+                                        <h3 class="project-title" x-text="project.title"></h3>
+                                        <p class="project-tagline" x-text="project.tagline"></p>
+                                        <div class="project-tags">
+                                            <template x-for="tag in project.technologies.split(',').map(t => t.trim()).filter(Boolean).slice(0, 4)" :key="tag">
+                                                <span x-text="tag"></span>
+                                            </template>
+                                        </div>
+                                        <div class="project-links" x-show="project.links">
+                                            <template x-for="link in (project.links || [])" :key="link.url">
+                                                <a :href="link.url" target="_blank" rel="noopener" @click.stop
+                                                    x-text="link.label + ' ↗'"></a>
+                                            </template>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </template>
+                    </div>
+
+                    <!-- Other projects -->
+                    <div class="row g-4">
+                        <template x-for="project in byDate(projects.filter(p => !p.featured))" :key="project.title">
+                            <div class="col-lg-4 col-md-6">
+                                <div class="project-card" role="button" tabindex="0"
+                                    @click="currentProject = project; showModal = true; bootstrap.Modal.getOrCreateInstance('#exampleModal').show();"
+                                    @keydown.enter="$el.click()">
+                                    <div class="project-media">
+                                        <img :src="project.img_link" :alt="project.title" loading="lazy">
+                                        <span class="project-year" x-show="project.date"
+                                            x-text="(project.date.match(/\d{4}/g) || []).pop()"></span>
+                                    </div>
+                                    <div class="project-body">
+                                        <h3 class="project-title" x-text="project.title"></h3>
+                                        <div class="project-tags">
+                                            <template x-for="tag in project.technologies.split(',').map(t => t.trim()).filter(Boolean).slice(0, 3)" :key="tag">
+                                                <span x-text="tag"></span>
+                                            </template>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </template>
+                    </div>
+                </div>
+
+                <div x-show="showModal" class="modal fade" id="exampleModal" tabindex="-1" aria-hidden="true"
+                    role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-lg">
+                        <div class="modal-content">
+                            <div class="modal-header bg-dark">
+                                <h5 class="modal-title text-light text-center"
+                                    x-text="currentProject ? currentProject.title : ''"></h5>
+                                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"
+                                    aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body bg-dark">
+                                <div class="container">
+                                    <div class="row text-light">
+                                        <div class="col-md-12">
+                                            <p x-show="currentProject && currentProject.date"><strong>Date:</strong> <span
+                                                    x-text="currentProject ? currentProject.date : ''"></span></p>
+                                            <p class="" x-text="currentProject ? currentProject.description : ''"></p>
+                                            <p><strong>Technologies:</strong> <span
+                                                    class="badge ml-3 bg-light text-dark "
+                                                    x-text="currentProject ? currentProject.technologies : ''"
+                                                    style="text-wrap: wrap;"></span>
+                                            </p>
+                                            <template x-if="currentProject && currentProject.links">
+                                                <p>
+                                                    <template x-for="link in currentProject.links" :key="link.url">
+                                                        <a :href="link.url" target="_blank" rel="noopener"
+                                                            class="btn btn-sm btn-outline-light me-2 mb-2"
+                                                            x-text="link.label"></a>
+                                                    </template>
+                                                </p>
+                                            </template>
+                                            <p></p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="row my-4">
+                                    <div class="col-md-12 text-center">
+                                        <h4 class="text-white">Snips</h4>
+                                    </div>
+                                </div>
+                                <template x-if="currentProject && currentProject.screenshots">
+                                    <template x-for="(screenshot, index) in currentProject.screenshots" :key="index">
+                                        <div class="row text-center my-3">
+                                            <div class="col-md-12">
+                                                <img :src="screenshot" class="img-fluid rounded" :alt="currentProject.title + ' screenshot'" loading="lazy"
+                                                    style="width: 70%;">
+                                            </div>
+                                        </div>
+                                    </template>
+                                </template>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+        </div>
+    </div>
+    <!-- Projects Section End -->
+
+    <div class="section-separator"></div>
+
+    <!-- Services Section Start -->
+    <div class="section d-flex align-items-center" id="services">
+        <div class="polygons"></div>
+        <div class="container">
+            <div class="row d-flex align-items-center justify-content-center text-nowrap text-center text-light my-5">
+                <div class="col"></div>
+                <div class="col">
+                    <img class="icon img-fluid" src="assets/img/services.png" width="150px" />
+                </div>
+                <div class="col"></div>
+            </div>
+            <div class="row d-flex align-items-center justify-content-center text-nowrap text-center text-light mb-5">
+                <div class="col"></div>
+                <div class="col">
+                    <h2 class="animated-heading">Services</h2>
+                </div>
+                <div class="col"></div>
+            </div>
+            <blockquote class="blockquote-sm text-center text-light mb-5">
+                &ldquo; I transform your ideas into distinctive solutions, whether for web, desktop, or mobile
+                platforms. &rdquo;
+            </blockquote>
+            <div class="service-steps">
+                <article class="service-step">
+                    <div class="service-step-top">
+                        <span class="service-step-icon"><img src="assets/img/services/analyse.png" alt=""></span>
+                        <span class="service-step-num">01</span>
+                    </div>
+                    <h3>Requirement Analysis</h3>
+                    <p>I dive deep into your goals and needs to plan the right solution for you.</p>
+                </article>
+                <article class="service-step">
+                    <div class="service-step-top">
+                        <span class="service-step-icon"><img src="assets/img/services/implementation.png" alt=""></span>
+                        <span class="service-step-num">02</span>
+                    </div>
+                    <h3>Implementation</h3>
+                    <p>I make your ideas real by writing clean, tested code that brings them to life.</p>
+                </article>
+                <article class="service-step">
+                    <div class="service-step-top">
+                        <span class="service-step-icon"><img src="assets/img/services/deployment.png" alt=""></span>
+                        <span class="service-step-num">03</span>
+                    </div>
+                    <h3>Deployment</h3>
+                    <p>I launch your project smoothly so you can share it with the world, hassle-free.</p>
+                </article>
+                <article class="service-step">
+                    <div class="service-step-top">
+                        <span class="service-step-icon"><img src="assets/img/services/maintenance.png" alt=""></span>
+                        <span class="service-step-num">04</span>
+                    </div>
+                    <h3>Maintenance</h3>
+                    <p>I stick around to keep things running and keep improving them over time.</p>
+                </article>
+            </div>
+
+        </div>
+    </div>
+    <!-- Services Section End -->
+
+    <div class="section-separator"></div>
+
+    <!-- Contact Section Start -->
+    <div class="section d-flex align-items-center" id="contact">
+        <div class="polygons"></div>
+        <div class="container">
+            <div class="row d-flex align-items-center justify-content-center text-nowrap text-center text-light mb-5">
+                <div class="col"></div>
+                <div class="col ml-3">
+                    <img class="icon img-fluid" src="assets/img/contact.png" width="150px" />
+                </div>
+                <div class="col"></div>
+            </div>
+            <div class="row d-flex align-items-center justify-content-center text-nowrap text-center text-light mb-5">
+                <div class="col"></div>
+                <div class="col">
+                    <h2 class="animated-heading">Contact me</h2>
+                </div>
+                <div class="col"></div>
+            </div>
+            <div class="contact-panel">
+                <div class="contact-intro">
+                    <p class="contact-kicker">Let's talk</p>
+                    <h3>Have a project or a role in mind?</h3>
+                    <p>I'm open to new opportunities and collaborations. Send me a message and I'll get back to you
+                        quickly.</p>
+                    <a class="hero-btn hero-btn-primary" href="mailto:chaker.khachlek@gmail.com">Send an email</a>
+                </div>
+                <div class="contact-cards">
+                    <div class="contact-card">
+                        <span class="contact-card-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M2 2A2 2 0 0 0 .05 3.555L8 8.414l7.95-4.859A2 2 0 0 0 14 2H2Zm-2 9.8V4.698l5.803 3.546L0 11.801Zm6.761-2.97-6.57 4.026A2 2 0 0 0 2 14h6.256A4.493 4.493 0 0 1 8 12.5a4.49 4.49 0 0 1 1.606-3.446l-.367-.225L8 9.586l-1.239-.757ZM16 9.671V4.697l-5.803 3.546.338.208A4.482 4.482 0 0 1 12.5 8c1.414 0 2.675.652 3.5 1.671Z" /> <path d="M15.834 12.244c0 1.168-.577 2.025-1.587 2.025-.503 0-1.002-.228-1.12-.648h-.043c-.118.416-.543.643-1.015.643-.77 0-1.259-.542-1.259-1.434v-.529c0-.844.481-1.4 1.26-1.4.585 0 .87.333.953.63h.03v-.568h.905v2.19c0 .272.18.42.411.42.315 0 .639-.415.639-1.39v-.118c0-1.277-.95-2.326-2.484-2.326h-.04c-1.582 0-2.64 1.067-2.64 2.724v.157c0 1.867 1.237 2.654 2.57 2.654h.045c.507 0 .935-.07 1.18-.18v.731c-.219.1-.643.175-1.237.175h-.044C10.438 16 9 14.82 9 12.646v-.214C9 10.36 10.421 9 12.485 9h.035c2.12 0 3.314 1.43 3.314 3.034v.21Zm-4.04.21v.227c0 .586.227.8.581.8.31 0 .564-.17.564-.743v-.367c0-.516-.275-.708-.572-.708-.346 0-.573.245-.573.791Z" /></svg></span>
+                        <div class="contact-card-body">
+                            <span class="contact-card-label">Email</span>
+                            <a href="mailto:chaker.khachlek@gmail.com">chaker.khachlek@gmail.com</a>
+                        </div>
+                        <button type="button" class="contact-copy" onclick="copyToClipboard('chaker.khachlek@gmail.com', this)"
+                            aria-label="Copy email address">Copy</button>
+                    </div>
+                    <a class="contact-card" href="https://www.linkedin.com/in/chaker-khachlek/" target="_blank" rel="noopener">
+                        <span class="contact-card-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854V1.146zm4.943 12.248V6.169H2.542v7.225h2.401zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248-.822 0-1.359.54-1.359 1.248 0 .694.521 1.248 1.327 1.248h.016zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016a5.54 5.54 0 0 1 .016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225h2.4z" /></svg></span>
+                        <div class="contact-card-body">
+                            <span class="contact-card-label">LinkedIn</span>
+                            <span>/in/chaker-khachlek</span>
+                        </div>
+                        <span class="contact-card-arrow" aria-hidden="true">↗</span>
+                    </a>
+                    <a class="contact-card" href="https://github.com/ChakerKhachlek" target="_blank" rel="noopener">
+                        <span class="contact-card-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z" /></svg></span>
+                        <div class="contact-card-body">
+                            <span class="contact-card-label">GitHub</span>
+                            <span>github.com/ChakerKhachlek</span>
+                        </div>
+                        <span class="contact-card-arrow" aria-hidden="true">↗</span>
+                    </a>
+                    <div class="contact-card">
+                        <span class="contact-card-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M3.1 11.2a.5.5 0 0 1 .4-.2H6a.5.5 0 0 1 0 1H3.75L1.5 15h13l-2.25-3H10a.5.5 0 0 1 0-1h2.5a.5.5 0 0 1 .4.2l3 4a.5.5 0 0 1-.4.8H.5a.5.5 0 0 1-.4-.8l3-4z" /> <path fill-rule="evenodd" d="M4 4a4 4 0 1 1 4.5 3.969V13.5a.5.5 0 0 1-1 0V7.97A4 4 0 0 1 4 3.999z" /></svg></span>
+                        <div class="contact-card-body">
+                            <span class="contact-card-label">Location</span>
+                            <span>Paris, France</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Contact Section End -->
+
+
+    <div class="section-separator"></div>
+
+    <!-- Footer -->
+    <footer class="footer d-flex flex-wrap justify-content-between align-items-center py-3 px-2 ">
+        <div class="col-md-4 col-12 d-flex align-items-center mb-3 mb-md-0">
+            <div class="px-2">
+                <img class="rounded" width="30px" src="assets/img/logo.jpeg" alt="My picture">
+            </div>
+            <div class="text-light">
+                ©
+                <span class="mb-3 mb-md-0 text-light" id="currentYear"></span>
+                Crafted by Chaker KHACHLEK
+            </div>
+        </div>
+        <ul class="nav col-md-4 col-12 justify-content-end list-unstyled d-flex px-2 social-icons">
+            <li class="ms-3">
+                <a class="text-light text-decoration-none" href="https://github.com/ChakerKhachlek" target="_blank">
+                    Github
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                        class="bi bi-github" viewBox="0 0 16 16">
+                        <path
+                            d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z" />
+                    </svg>
+                </a>
+            </li>
+            <li class="ms-3">
+                <a class="text-light text-decoration-none" href="https://twitter.com/KhachlekChaker" target="_blank">
+                    Twitter
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                        class="bi bi-twitter-x" viewBox="0 0 16 16">
+                        <path
+                            d="M12.6.75h2.454l-5.36 6.142L16 15.25h-4.937l-3.867-5.07-4.425 5.07H.316l5.733-6.57L0 .75h5.063l3.495 4.633L12.601.75Zm-.86 13.028h1.36L4.323 2.145H2.865l8.875 11.633Z" />
+                    </svg>
+                </a>
+            </li>
+            <li class="ms-3">
+                <a class="text-light text-decoration-none" href="https://www.linkedin.com/in/chaker-khachlek/"
+                    target="_blank">
+                    Linkedin
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                        class="bi bi-linkedin" viewBox="0 0 16 16">
+                        <path
+                            d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854V1.146zm4.943 12.248V6.169H2.542v7.225h2.401zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248-.822 0-1.359.54-1.359 1.248 0 .694.521 1.248 1.327 1.248h.016zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016a5.54 5.54 0 0 1 .016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225h2.4z" />
+                    </svg>
+                </a>
+            </li>
+        </ul>
+    </footer>
+    <!-- Footer End -->
+
+    <!-- scripts -->
+    <script src="js/particles.min.js"></script>
+    <script src="js/particles.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
+
+    <!-- Script to display the current year -->
+    <script>
+        console.log("Hi Hacker! Take whatever you want there is nothing to hide https://github.com/ChakerKhachlek/CKPortfolio")
+        document.getElementById("currentYear").textContent =
+            new Date().getFullYear();
+    </script>
+
+    <!-- Navbar: solid on scroll, highlight the section in view, close the mobile menu on click -->
+    <script>
+        (function () {
+            var nav = document.getElementById('siteNav');
+            var links = Array.prototype.slice.call(nav.querySelectorAll('.site-links .nav-link'));
+            var sections = links.map(function (l) { return document.querySelector(l.getAttribute('href')); });
+
+            function update() {
+                nav.classList.toggle('scrolled', window.scrollY > 20);
+                var mark = window.scrollY + window.innerHeight * 0.35, current = null;
+                sections.forEach(function (sec, i) { if (sec && sec.offsetTop <= mark) current = links[i]; });
+                links.forEach(function (l) {
+                    var on = l === current;
+                    l.classList.toggle('active', on);
+                    if (on) l.setAttribute('aria-current', 'true'); else l.removeAttribute('aria-current');
+                });
+            }
+            window.addEventListener('scroll', update, { passive: true });
+            window.addEventListener('resize', update);
+            update();
+
+            var menu = document.getElementById('navbarSupportedContent');
+            links.forEach(function (l) {
+                l.addEventListener('click', function () {
+                    if (menu.classList.contains('show') && window.bootstrap) bootstrap.Collapse.getOrCreateInstance(menu).hide();
+                });
+            });
+        })();
+    </script>
+
+    <!-- Script to display ripples -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // Get the toggle switch element
+            var toggleSwitch = document.getElementById('rippleToggle');
+
+            // Function to initialize ripples
+            function initializeRipples() {
+                $('.section').ripples({
+                    resolution: 512,
+                    dropRadius: 20,
+                    perturbance: 0.04,
+                });
+                $('.footer').ripples({
+                    resolution: 512,
+                    dropRadius: 20,
+                    perturbance: 0.04,
+                });
+            }
+
+            // Function to destroy ripples
+            function destroyRipples() {
+                $('.section').ripples('destroy');
+                $('.footer').ripples('destroy');
+            }
+
+            // Add an event listener to handle changes
+            toggleSwitch.addEventListener('change', function () {
+                // Get the current state of the toggle switch
+                var rippleEnabled = toggleSwitch.checked;
+
+                // Implement logic to enable/disable water ripple as needed
+                if (rippleEnabled) {
+                    // Enable water ripple (add your logic here)
+                    console.log('Water ripple enabled');
+
+                    // Destroy existing ripples instance
+                    destroyRipples();
+
+                    // Initialize ripples after updating the water-ripple class
+                    initializeRipples();
+                } else {
+                    // Disable water ripple (add your logic here)
+                    console.log('Water ripple disabled');
+
+                    // Destroy existing ripples instance
+                    destroyRipples();
+                }
+            });
+
+        });
+
+
+
+    </script>
+
+    <!-- Script to copy text on-click -->
+    <script>
+        function copyToClipboard(text, button) {
+            function done() {
+                if (!button) return;
+                button.textContent = 'Copied ✓';
+                button.classList.add('copied');
+                setTimeout(function () { button.textContent = 'Copy'; button.classList.remove('copied'); }, 1800);
+            }
+            function fallback() {
+                var temp = document.createElement('textarea');
+                temp.value = text;
+                document.body.appendChild(temp);
+                temp.select();
+                document.execCommand('copy');
+                document.body.removeChild(temp);
+                done();
+            }
+            if (navigator.clipboard && window.isSecureContext) {
+                navigator.clipboard.writeText(text).then(done, fallback);
+            } else {
+                fallback();
+            }
+        }
+    </script>
+
+
+
 </body>
 
 </html>
