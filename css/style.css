@@ -1103,3 +1103,20 @@ a.contact-card:hover .contact-card-arrow {
     gap: 28px;
   }
 }
+
+/* ---- static lists for visitors and crawlers without JavaScript (see scripts/build_seo.py) ---- */
+.seo-static {
+  max-width: 900px;
+  margin: 0 auto 32px;
+  color: #d1d5db;
+  line-height: 1.6;
+}
+
+.seo-static li {
+  margin-bottom: 10px;
+}
+
+.seo-static a {
+  color: #4ade80;
+  margin-left: 6px;
+}
