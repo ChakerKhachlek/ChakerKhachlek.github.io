@@ -1,5 +1,30 @@
 [
   {
+    "title": "Symfony 8 Certification Lab",
+    "date": "Nov. 2026",
+    "featured": true,
+    "tagline": "A free study site for the Symfony 8 certification: courses, 2,000+ exam questions, mock exams and a live PHP playground.",
+    "img_link": "assets/img/projects/symfony/cover.jpg",
+    "description": "Symfony 8 Certification Lab is a complete, free study site for the Symfony 8 Certification (Symfony 8.0, PHP 8.4). It has 15 study areas mapped to the official exam topics with 175 chapters written from the Symfony 8.0 docs and checked against the 8.0 source code, over 2,000 original exam-style questions with explanations, a timed exam simulator weighted like the real exam (75 questions, 90 minutes) with fixed and random mock exams, practice by area, spaced-repetition flashcards, a week-by-week study plan and progress tracking. Its playground runs real PHP 8.4 and real Symfony 8.0 components compiled to WebAssembly in the browser, with graded live-code exercises. The whole site also exists in French, has a smart search over every chapter and question, optional GitHub / Google sign-in with progress synced through Supabase, and full SEO and AI-search (llms.txt) support. Built with Next.js 16 and deployed on Vercel.",
+    "technologies": "Next.js 16, TypeScript, PHP 8.4 WebAssembly, Symfony 8.0, Supabase, Vercel, i18n (EN / FR), SEO & GEO",
+    "ai_assisted": [
+      "Claude"
+    ],
+    "links": [
+      {
+        "label": "Visit the study site",
+        "url": "https://symfony-certification.vercel.app"
+      }
+    ],
+    "screenshots": [
+      "assets/img/projects/symfony/cover.jpg",
+      "assets/img/projects/symfony/courses.jpg",
+      "assets/img/projects/symfony/exam.jpg",
+      "assets/img/projects/symfony/playground.jpg",
+      "assets/img/projects/symfony/exam-guide.jpg"
+    ]
+  },
+  {
     "title": "Guardians of Solaria",
     "date": "2026",
     "featured": true,
