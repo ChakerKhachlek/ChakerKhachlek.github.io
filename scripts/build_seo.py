@@ -62,6 +62,17 @@ def tech_list(project):
     return [t.strip() for t in project.get("technologies", "").split(",") if t.strip()]
 
 
+def absolute(url):
+    """Site-relative image paths (assets/...) become full URLs for the JSON-LD."""
+    return url if not url or url.startswith("http") else SITE + url
+
+
+def ai_note(project):
+    """' AI-assisted (Claude).' for a project built with AI help, else ''."""
+    tools = project.get("ai_assisted") or []
+    return f" AI-assisted ({', '.join(tools)})." if tools else ""
+
+
 def end_year(project):
     years = re.findall(r"\d{4}", project.get("date", ""))
     return years[-1] if years else None
@@ -76,7 +87,7 @@ def json_ld(projects, techs):
             "description": p.get("tagline") or p["description"],
             "creator": {"@id": PERSON["@id"]},
             "keywords": ", ".join(tech_list(p)),
-            "image": p.get("img_link"),
+            "image": absolute(p.get("img_link")),
         }
         if end_year(p):
             work["dateCreated"] = end_year(p)
@@ -111,7 +122,7 @@ def projects_noscript(projects):
         links = "".join(f' <a href="{e(l["url"])}">{e(l["label"])}</a>' for l in p.get("links", []))
         rows.append(
             f'                        <li><strong>{e(p["title"])}</strong> ({e(p.get("date", ""))}): '
-            f'{e(p["description"])} <em>Technologies: {e(", ".join(tech_list(p)))}.</em>{links}</li>'
+            f'{e(p["description"])} <em>Technologies: {e(", ".join(tech_list(p)))}.</em>{e(ai_note(p))}{links}</li>'
         )
     return ("                <noscript>\n                    <ul class=\"seo-static\">\n"
             + "\n".join(rows) + "\n                    </ul>\n                </noscript>\n")
@@ -150,7 +161,7 @@ def llms_txt(projects, techs):
     for p in projects:
         url = p["links"][0]["url"] if p.get("links") else SITE + "#projects"
         lines.append(f"- [{p['title']}]({url}) ({p.get('date', '')}): {p['description']} "
-                     f"Technologies: {', '.join(tech_list(p))}.")
+                     f"Technologies: {', '.join(tech_list(p))}.{ai_note(p)}")
     groups = {}
     for t in techs:
         groups.setdefault(t.get("category", "Other"), []).append(t["title"])

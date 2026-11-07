@@ -374,6 +374,33 @@ footer {
   font-weight: bold;
 }
 
+/* AI-assisted badge: which projects were built with AI help, and with which tools */
+.project-ai {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px;
+  margin: 0;
+}
+
+.project-ai-badge {
+  font-size: 0.75rem;
+  font-weight: bold;
+  color: #e9d5ff;
+  background: linear-gradient(90deg, rgba(168, 85, 247, 0.28), rgba(59, 130, 246, 0.28));
+  border: 1px solid rgba(192, 132, 252, 0.6);
+  border-radius: 999px;
+  padding: 2px 10px;
+}
+
+.project-ai-tool {
+  font-size: 0.75rem;
+  color: #c4b5fd;
+  border: 1px dashed rgba(192, 132, 252, 0.5);
+  border-radius: 999px;
+  padding: 2px 9px;
+}
+
 /* ---- about ---- */
 .about-grid {
   display: grid;

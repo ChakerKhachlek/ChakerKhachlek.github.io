@@ -1,5 +1,34 @@
 [
   {
+    "title": "Guardians of Solaria",
+    "date": "2026",
+    "featured": true,
+    "tagline": "A 4-player co-op action RPG for Android: 45 dungeons, 4 Guardians, pets and wings to collect.",
+    "img_link": "assets/img/projects/solaria/cover.jpg",
+    "description": "Guardians of Solaria (Solaria: Kingdom of the Lantern) is a solo-developed co-op action RPG for Android, made in Unity 6. Up to four players team up online, or with AI bot allies that fill empty seats, to clear 45 hand-tuned dungeons across 3 realms, each with its own sky, traps, monsters and a boss that wakes in stages. Four Guardians (tank, healer, mage, hunter) with abilities, talents, Forge crafting and gear whose look shows on the character; pets with their own skills (Pounce, Roar), wings that flap and glide on a jump, Keystone runs with a timer and weekly affixes, a weekly dungeon with leaderboards, daily challenges and achievements. Online through Unity Gaming Services (Relay, Lobby, Authentication with Google sign-in, Cloud Save, Remote Config, Cloud Code), playable in English, French and Arabic (right-to-left with letter shaping). Built with AI as an engineering multiplier: Claude Code agents, editor test bots, a regression suite and automated release to Google Play testing.",
+    "technologies": "Unity 6, C#, Unity Gaming Services, Online Co-op (Relay & Lobby), Game AI Bots, Google Play, Localization (EN / FR / AR), Blender, Python Tooling",
+    "ai_assisted": [
+      "Claude"
+    ],
+    "links": [
+      {
+        "label": "Visit solariakingdom.com",
+        "url": "https://solariakingdom.com"
+      }
+    ],
+    "screenshots": [
+      "assets/img/projects/solaria/cover.jpg",
+      "assets/img/projects/solaria/map-33.jpg",
+      "assets/img/projects/solaria/bots-looks.jpg",
+      "assets/img/projects/solaria/pets-pounce.jpg",
+      "assets/img/projects/solaria/news-leap.jpg",
+      "assets/img/projects/solaria/mech-wings.jpg",
+      "assets/img/projects/solaria/mech-jump-spikes.jpg",
+      "assets/img/projects/solaria/map-7.jpg",
+      "assets/img/projects/solaria/map-44.jpg"
+    ]
+  },
+  {
     "title": "Loasis (Oasis Plaza)",
     "date": "2026",
     "featured": true,
@@ -35,6 +64,10 @@
       "https://i.ibb.co/ymS1p8hk/out1.png",
       "https://i.ibb.co/nMXcryHc/out2.png",
       "https://i.ibb.co/RGPXtCXX/roulette.png"
+    ],
+    "ai_assisted": [
+      "Gemini",
+      "Antigravity"
     ]
   },
   {
@@ -64,6 +97,10 @@
       "https://i.ibb.co/5gSm4mn7/image.png",
       "https://i.ibb.co/Tx3nKwW7/image.png",
       "https://i.ibb.co/h1FPBySk/image.png"
+    ],
+    "ai_assisted": [
+      "Gemini",
+      "Antigravity"
     ]
   },
   {
@@ -79,6 +116,9 @@
       "https://i.ibb.co/89m0902/4.png",
       "https://i.ibb.co/crdCZR8/5.png",
       "https://i.ibb.co/6B88yKW/6.png"
+    ],
+    "ai_assisted": [
+      "ChatGPT"
     ]
   },
   {
@@ -147,6 +187,9 @@
       "https://i.ibb.co/8sqPm8J/download-19.png",
       "https://i.ibb.co/sVL4yNJ/download-20.png",
       "https://i.ibb.co/wpVp8tP/download-21.png"
+    ],
+    "ai_assisted": [
+      "ChatGPT"
     ]
   },
   {
