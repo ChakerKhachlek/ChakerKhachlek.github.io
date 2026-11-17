@@ -93,6 +93,10 @@ def json_ld(projects, techs):
             work["dateCreated"] = end_year(p)
         if p.get("links"):
             work["url"] = p["links"][0]["url"]
+            # Further links (press coverage, directories) are pages about the project.
+            if p["links"][1:]:
+                work["subjectOf"] = [{"@type": "WebPage", "name": l["label"], "url": l["url"]}
+                                     for l in p["links"][1:]]
         items.append({"@type": "ListItem", "position": i, "item": work})
     person = dict(PERSON, knowsAbout=[t["title"] for t in techs])
     graph = {
@@ -161,7 +165,8 @@ def llms_txt(projects, techs):
     for p in projects:
         url = p["links"][0]["url"] if p.get("links") else SITE + "#projects"
         lines.append(f"- [{p['title']}]({url}) ({p.get('date', '')}): {p['description']} "
-                     f"Technologies: {', '.join(tech_list(p))}.{ai_note(p)}")
+                     f"Technologies: {', '.join(tech_list(p))}.{ai_note(p)}"
+                     + "".join(f" {l['label']}: {l['url']}" for l in p.get("links", [])[1:]))
     groups = {}
     for t in techs:
         groups.setdefault(t.get("category", "Other"), []).append(t["title"])
